@@ -3,5 +3,7 @@
 ## 启动`qdrant`
 
 ```bash
+docker compose -f qdrant-docker-compose.yaml down
+
 docker compose -f qdrant-docker-compose.yaml up -d
 ```

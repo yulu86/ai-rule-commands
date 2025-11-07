@@ -42,3 +42,9 @@ claude
 mklink "C:\Users\Yulu Xu\.claude\CLAUDE.md" "D:\workspace\code\01_AI\ai-rule-commands\.claude\CLAUDE.md"
 mklink /d "C:\Users\Yulu Xu\.claude\agents" "D:\workspace\code\01_AI\ai-rule-commands\.claude\agents"
 ```
+
+#### mac
+```bash
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/CLAUDE.md" "/Users/xuyulu/.claude/CLAUDE.md"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/agents" "/Users/xuyulu/.claude/agents"
+```

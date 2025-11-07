@@ -11,22 +11,34 @@ docker compose -f qdrant-docker-compose.yaml up -d
 ## 2. 配置`continue`
 
 
-## 3. 配置`kilo code`
 
-### mac
+## 3. 配置`claude code`
 
+### 3.1 安装`claude code`，对接`deepseek`
 ```bash
-ln -s /Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.kilocode  /Users/xuyulu/.kilocode
+# 设置npm源
+npm config set registry https://registry.npmmirror.com/
 ```
 
-### windows
-
-#### cmd
-```cmd
-mklink /D "%USERPROFILE%\.kilocode" "C:\Users\xuyulu\workspace\code\01_AI\ai-rule-commands\.kilocode"
+参考`[https://api-docs.deepseek.com/zh-cn/guides/anthropic_api](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api)`配置deepseek，环境变量
+```
+export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN=${DEEPSEEK_API_KEY}
+export API_TIMEOUT_MS=600000
+export ANTHROPIC_MODEL=deepseek-chat
+export ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ```
 
-#### powershell
-```powershell
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.kilocode" -Target "C:\Users\xuyulu\workspace\code\01_AI\ai-rule-commands\.kilocode"
+启动`claude code`
+```bash
+claude
+```
+
+### 3.2 `claude code`配置
+
+#### windows cmd (管理员模式)
+```bash
+mklink "C:\Users\Yulu Xu\.claude\CLAUDE.md" "D:\workspace\code\01_AI\ai-rule-commands\.claude\CLAUDE.md"
+mklink /d "C:\Users\Yulu Xu\.claude\agents" "D:\workspace\code\01_AI\ai-rule-commands\.claude\agents"
 ```

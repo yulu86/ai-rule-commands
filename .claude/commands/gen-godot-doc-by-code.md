@@ -2,9 +2,6 @@
 name: gen-godot-doc-by-code
 description: 根据Godot代码反推生成Godot游戏设计文档
 argument-hint: "[设计文档主题]"
-steps:
-  - agent: godot-architect
-  - agent: design-doc-writer
 ---
 
 1. 检查用户是否提供参数，如果没有提供，请求用户提供参数

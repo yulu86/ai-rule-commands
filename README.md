@@ -35,7 +35,7 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 claude
 ```
 
-### 3.2 `claude code`配置
+### 3.2 配置`claude code`
 
 #### windows cmd (管理员模式)
 ```bash
@@ -47,4 +47,18 @@ mklink /d "C:\Users\Yulu Xu\.claude\agents" "D:\workspace\code\01_AI\ai-rule-com
 ```bash
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/CLAUDE.md" "/Users/xuyulu/.claude/CLAUDE.md"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/agents" "/Users/xuyulu/.claude/agents"
+```
+
+### 3.3 安装`mcp-server`
+
+> mcp server可查找：
+> [https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file](https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file)
+> [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
+
+
+- [godot-mcp](https://github.com/Coding-Solo/godot-mcp)
+- [mcp-client-for-ollama](https://github.com/jonigl/mcp-client-for-ollama)
+
+```plaintext
+请帮我全局安装并配置MCPServer: godot-mcp，参考 https://github.com/Coding-Solo/godot-mcp
 ```

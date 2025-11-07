@@ -15,4 +15,5 @@ build/
 .claude/
 
 !.cluade/agents
+!.cluade/commands
 !.cluade/CLAUDE.md

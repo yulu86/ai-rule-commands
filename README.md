@@ -51,6 +51,12 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/agents" "/Use
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/Users/xuyulu/.claude/commands"
 ```
 
+
+---
+以下内容为可选
+
+---
+
 ### 3.3 安装`mcp-server`
 
 > mcp server可查找：

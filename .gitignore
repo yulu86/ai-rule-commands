@@ -13,3 +13,6 @@ build/
 **/*~
 
 .claude/
+
+!.cluade/agents
+!.cluade/CLAUDE.md

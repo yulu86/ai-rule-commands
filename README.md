@@ -16,6 +16,11 @@ docker compose -f qdrant-docker-compose.yaml up -d
 mklink "C:\Users\Yulu Xu\.continue\config.yaml" "D:\workspace\code\01_AI\ai-rule-commands\.continue\config.yaml"
 ```
 
+# mac
+```bash
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.continue/config.yaml" "/Users/xuyulu/.continue/config.yaml"
+```
+
 ## 3. 配置`claude code`
 
 ### 3.1 安装`claude code`，对接`deepseek`

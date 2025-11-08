@@ -71,17 +71,9 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/U
 npm i -g @modelcontextprotocol/server-filesystem
 claude mcp add filesystem -s user -- filesystem-mcp-server D:/workspace/code
 
-# puppeteer 
-npm i -g @modelcontextprotocol/server-puppeteer
-claude mcp add puppeteer -s user -- puppeteer-mcp-server
-
 # thinking
 npm i -g @modelcontextprotocol/server-sequential-thinking
 claude mcp add thinking -s user -- server-sequential-thinking
-```
-
-```plaintext
-请帮我全局安装并配置MCPServer: godot-mcp，参考 https://github.com/Coding-Solo/godot-mcp
 ```
 
 ### 3.3 安装配置`claude-code-router`

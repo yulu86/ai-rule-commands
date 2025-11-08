@@ -46,6 +46,23 @@ claude
 
 ### 3.2 配置`claude code`
 
+#### 配置代理
+
+```bash
+mkdir -p ~/.claude
+vim ~/.claude/settings.json
+```
+
+增加
+```json
+  "env": {
+    "HTTP_PROXY": "http://127.0.0.1:7890",
+    "HTTPS_PROXY": "http://127.0.0.1:7890"
+  },
+```
+
+
+
 #### windows cmd (管理员模式)
 ```bash
 mklink "C:\Users\Yulu Xu\.claude\CLAUDE.md" "D:\workspace\code\01_AI\ai-rule-commands\.claude\CLAUDE.md"

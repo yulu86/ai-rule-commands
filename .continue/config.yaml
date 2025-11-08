@@ -1,0 +1,24 @@
+name: Continue Config
+version: 0.0.1
+models:
+  - name: qwen3-8b
+    provider: ollama
+    model: qwen3:8b
+    roles:
+      - chat
+
+  - name: qwen2.5-coder-7b
+    provider: ollama
+    model: qwen2.5-coder:7b
+    roles:
+      - chat
+      - edit
+      - autocomplete
+      - apply
+
+  - name: qwen2.5-coder-1.5b
+    provider: ollama
+    model: qwen2.5-coder:1.5b
+    roles:
+      - chat
+      - autocomplete

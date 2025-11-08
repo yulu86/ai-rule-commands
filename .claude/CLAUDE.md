@@ -1,3 +1,3 @@
 - 使用中文输出回答和文档
 - 尽量使用本地记忆`mcp-server-memory`的工具，减少文件读取
-
+- 执行`/init`命令时，同时刷新记忆到`mcp-server-memory`中

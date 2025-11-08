@@ -10,19 +10,24 @@ argument-hint: "[编码任务]"
 - 如果用户提供了参数，继续执行
 - 与我`分工合作`完成编码任务 $ARGUMENTS，按照以下步骤编写代码：    
     1. 查找当前项目中 /docs 目录下的文档(如果存在)，寻找跟编码任务 $ARGUMENTS 相关的设计
-    2. 如果没有找到对应的设计，@godot-architect 请按照编码任务 $ARGUMENTS 输出设计，并请求用户确认，如果用户不认可，请回到步骤2开始执行
-    3. @godot-game-developer 根据设计编写代码，编写的代码需要符合`gdscript编码规范`的要求
-    4. @senior-code-reviewer 检视刚编写的代码，查找是否存在警告或代码坏味道，重构解决坏味道
-    5. @godot-game-developer 如果遇到需要我执行的步骤(例如：创建Sprite、创建动画、创建碰撞等可视化的任务)，暂停任务执行，问我是否已完成工作，待我回答完成后才继续执行
-    6. 重复执行步骤2~5，直到实现编码任务 $ARGUMENTS
-
+    2. 如果没有找到对应的设计，@godot-architect 请按照编码任务 $ARGUMENTS 输出设计，用一句话总结方案，并请求用户确认，如果用户不认可，请回到步骤2开始执行
+	3. @godot-architect 按照设计方案分解任务，并按照依赖关系编排好任务的顺序。
+	4. @godot-architect 按照任务是否涉及可视化划分责任人，可视化相关的任务交给我，非可视化的任务交给 @godot-game-developer
+	5. 按照任务划分，生成todo-list，并按顺序开始执行
+	6. 如果执行到是我负责的任务，请给出任务的详细说明、操作步骤和完成标准，@design-doc-writer 输出到 docs/tasks/ 目录下。并暂停执行，询问我是否已完成工作，待我回答完成后，刷新todo-list状态，继续执行。
+	7. 如果执行到 @godot-game-developer 负责的任务，@godot-game-developer 根据设计编写代码。编写的代码需要符合`gdscript编码规范`的要求
+	8. @senior-code-reviewer 检视刚编写的代码，查找是否存在警告或代码坏味道，重构解决坏味道
+    9. 重复执行步骤6~8，直到实现编码任务 $ARGUMENTS
 
 ## 分工合作
 1. 你的职责：
   - 使用gdscript编写游戏逻辑
+  - tscn文件框架搭建
 2. 我的职责：
-  - tscn文件搭建
+  - tscn文件细化调整
   - 使用资产完成动画创建
+  - 创建Sprite、
+  - 创建碰撞
   - 配置字体、颜色等  
   - 配置项目设置
 

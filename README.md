@@ -51,7 +51,6 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/agents" "/Use
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/Users/xuyulu/.claude/commands"
 ```
 
-
 ---
 以下内容为可选
 
@@ -63,9 +62,19 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/U
 > [https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file](https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file)
 > [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
 
+```bash
+# filesystem
+npm i -g @modelcontextprotocol/server-filesystem
+claude mcp add filesystem -s user -- filesystem-mcp-server D:/workspace/code
 
-- [godot-mcp](https://github.com/Coding-Solo/godot-mcp)
-- [mcp-client-for-ollama](https://github.com/jonigl/mcp-client-for-ollama)
+# puppeteer 
+npm i -g @modelcontextprotocol/server-puppeteer
+claude mcp add puppeteer -s user -- puppeteer-mcp-server
+
+# thinking
+npm i -g @modelcontextprotocol/server-sequential-thinking
+claude mcp add thinking -s user -- server-sequential-thinking
+```
 
 ```plaintext
 请帮我全局安装并配置MCPServer: godot-mcp，参考 https://github.com/Coding-Solo/godot-mcp

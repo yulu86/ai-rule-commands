@@ -101,6 +101,10 @@ npm i -g @modelcontextprotocol/server-sequential-thinking
 claude mcp add thinking -s user -- server-sequential-thinking
 ```
 
+```plaintext
+请在claude code中全局配置`mcp-server-memory`，对接到QDRANT，以保存记忆。QDRANT的访问地址 http://localhost:6333
+```
+
 ### 3.3 安装配置`claude-code-router`
 
 ```bash

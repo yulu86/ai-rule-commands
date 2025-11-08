@@ -74,7 +74,10 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/U
 ```bash
 # filesystem
 npm i -g @modelcontextprotocol/server-filesystem
+## windows
 claude mcp add filesystem -s user -- filesystem-mcp-server D:/workspace/code
+## mac
+claude mcp add filesystem -s user -- filesystem-mcp-server /Users/xuyulu/workspace/code
 
 # thinking
 npm i -g @modelcontextprotocol/server-sequential-thinking

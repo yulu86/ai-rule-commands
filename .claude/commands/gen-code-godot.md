@@ -12,7 +12,7 @@ argument-hint: "[编码任务]"
     1. 查找当前项目中 /docs 目录下的文档(如果存在)，寻找跟编码任务 $ARGUMENTS 相关的设计
     2. 如果没有找到对应的设计，@godot-architect 请按照编码任务 $ARGUMENTS 输出设计，并请求用户确认，如果用户不认可，请回到步骤2开始执行
     3. @godot-game-developer 根据设计编写代码，编写的代码需要符合`gdscript编码规范`的要求
-    4. @senior-code-reviewer 检视刚编写的代码，查找是否存在代码坏味道，重构解决坏味道
+    4. @senior-code-reviewer 检视刚编写的代码，查找是否存在警告或代码坏味道，重构解决坏味道
     5. @godot-game-developer 如果遇到需要我执行的步骤(例如：创建Sprite、创建动画、创建碰撞等可视化的任务)，暂停任务执行，问我是否已完成工作，待我回答完成后才继续执行
     6. 重复执行步骤2~5，直到实现编码任务 $ARGUMENTS
 

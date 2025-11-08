@@ -1,0 +1,82 @@
+---
+name: gen-code-godot
+description: 与我合作编写Godot代码
+argument-hint: "[编码任务]"
+---
+
+## 执行步骤
+
+- 检查用户是否提供参数，如果没有提供，请求用户提供参数
+- 如果用户提供了参数，继续执行
+- 与我`分工合作`完成编码任务 $ARGUMENTS，按照以下步骤编写代码：    
+    1. 查找当前项目中 /docs 目录下的文档(如果存在)，寻找跟编码任务 $ARGUMENTS 相关的设计
+    2. 如果没有找到对应的设计，@godot-architect 请按照编码任务 $ARGUMENTS 输出设计，并请求用户确认，如果用户不认可，请回到步骤2开始执行
+    3. @godot-game-developer 根据设计编写代码，编写的代码需要符合`gdscript编码规范`的要求
+    4. @senior-code-reviewer 检视刚编写的代码，查找是否存在代码坏味道，重构解决坏味道
+    5. @godot-game-developer 如果遇到需要我执行的步骤(例如：创建Sprite、创建动画、创建碰撞等可视化的任务)，暂停任务执行，问我是否已完成工作，待我回答完成后才继续执行
+    6. 重复执行步骤2~5，直到实现编码任务 $ARGUMENTS
+
+
+## 分工合作
+1. 你的职责：
+  - 使用gdscript编写游戏逻辑
+2. 我的职责：
+  - tscn文件搭建
+  - 使用资产完成动画创建
+  - 配置字体、颜色等  
+  - 配置项目设置
+
+## 原则
+1. 遵守小步前进原则
+2. 遵守SOLID原则
+3. 遵守DRY原则
+
+### gdscript编码规范
+
+#### 编码与特殊字符
+
+- 使用换行符（LF）换行，而非 CRLF 或 CR。
+- 在每个文件的末尾使用一个换行符。
+- 使用不带字节顺序标记的 UTF-8 编码。
+- 使用制表符代替空格进行缩进。
+
+#### 缩进
+
+- 每个缩进的缩进级别必须大于包含该缩进的代码块的缩进级别。
+  规范示例:
+  ```gdscript
+  for i in range(10):
+	print("hello")
+  ```
+
+  不规范示例:
+  ```gdscript
+  for i in range(10):
+  print("hello")
+
+  for i in range(10):
+		print("hello")
+  ```
+- 使用2个缩进级别来区分续行代码块与常规代码块。
+  规范示例:
+  ```gdscript
+  effect.interpolate_property(sprite, "transform/scale",
+		sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
+		Tween.TRANS_QUAD, Tween.EASE_OUT)
+  ```
+
+  不规范示例:
+  ```gdscript
+  effect.interpolate_property(sprite, "transform/scale",
+	sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
+	Tween.TRANS_QUAD, Tween.EASE_OUT)
+  ```
+  此规则的例外：数组、字典和枚举。使用单个缩进级别来区分续行代码块。
+
+- 用两个空行来包围函数和类定义
+
+### 编码
+
+- gdscript的func签名里的参数如果没有在func的实现中使用，请用`_`作为参数名的开头
+- 请不要使用`print`打印日志
+- 请尽量减少代码注释，而是使用代码的名称自注释

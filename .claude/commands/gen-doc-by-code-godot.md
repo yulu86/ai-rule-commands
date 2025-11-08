@@ -1,5 +1,5 @@
 ---
-name: gen-godot-doc-by-code
+name: gen-doc-by-code-godot
 description: 根据Godot代码反推生成Godot游戏设计文档
 argument-hint: "[设计文档主题]"
 ---

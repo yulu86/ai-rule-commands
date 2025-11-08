@@ -12,8 +12,5 @@ build/
 
 **/*~
 
-.claude/
-
-!.cluade/agents
-!.cluade/commands
-!.cluade/CLAUDE.md
+settings.local.json
+router.js

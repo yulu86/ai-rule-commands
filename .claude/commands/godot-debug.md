@@ -1,5 +1,5 @@
 ---
-name: debug-godot
+name: godot-debug
 description: 修复Godot代码中的issue
 argument-hint: "[issue描述]"
 ---

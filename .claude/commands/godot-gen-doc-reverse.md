@@ -1,7 +1,7 @@
 ---
-name: gen-doc-by-code-godot
+name: godot-gen-doc-reverse
 description: 根据Godot代码反推生成Godot游戏设计文档
-argument-hint: "[设计文档主题]"
+argument-hint: "[topic]"
 ---
 
 1. 检查用户是否提供参数，如果没有提供，请求用户提供参数

@@ -1,5 +1,5 @@
 ---
-name: gen-code-godot
+name: godot-gen-code
 description: 与我合作编写Godot代码
 argument-hint: "[编码任务]"
 ---

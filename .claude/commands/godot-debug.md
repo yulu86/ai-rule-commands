@@ -1,66 +1,96 @@
 ---
 name: godot-debug
-description: 修复Godot代码中的issue
-argument-hint: "[issue描述]"
+description: Godot 代码问题诊断与修复
+argument-hint: "[问题描述]"
 ---
+
+## 功能说明
+
+专门用于诊断和修复 Godot 项目中的代码问题，采用系统化的调试流程，确保问题得到准确分析和有效解决。
 
 ## 执行步骤
 
-1. 检查用户是否提供参数，如果没有提供，请求用户提供参数
-2. 如果用户提供了参数，继续执行
-5. @senior-code-reviewer 读取项目代码信息 CLAUDE.md，掌握项目基本信息
-6. @senior-code-reviewer 思考issue $ARGUMENTS 可能的原因和代码所在位置
-7. @senior-code-reviewer 检视代码，分析是否是问题的根因，如果不是，则继续读取其他代码进行分析，直到找到根因
-8. @senior-code-reviewer 输出问题根因，并请求用户确认，如果用户不认可，请回到步骤6开始执行
-9. @godot-game-developer 根据分析的问题根因，思考修改方案，并请求用户确认，如果用户不认可，请重新执行步骤9
-10. @godot-game-developer 按照修改方案修改代码，代码需要满足`gdscript编码规范`的要求
+1. **问题验证**：
+   - 检查用户是否提供了问题描述参数
+   - 如未提供参数，提示用户详细描述遇到的问题
 
-### gdscript编码规范
+2. **项目信息收集**：
+   - @senior-code-reviewer 读取项目配置文件 CLAUDE.md，掌握项目基本信息
+   - 分析项目结构和技术栈，为问题诊断提供上下文
 
-#### 编码与特殊字符
+3. **问题分析与定位**：
+   - @senior-code-reviewer 深入分析问题描述 $ARGUMENTS，推断可能的原因和影响范围
+   - 定位可能存在问题的代码模块和具体位置
+   - 系统性地检查相关代码，分析是否存在问题的根本原因
+   - 如初步分析未找到根因，扩大搜索范围，持续深入分析
 
-- 使用换行符（LF）换行，而非 CRLF 或 CR。
-- 在每个文件的末尾使用一个换行符。
-- 使用不带字节顺序标记的 UTF-8 编码。
-- 使用制表符代替空格进行缩进。
+4. **根因确认**：
+   - @senior-code-reviewer 输出详细的问题根因分析报告
+   - 向用户确认诊断结果，如用户不认可则返回步骤3重新分析
 
-#### 缩进
+5. **解决方案设计**：
+   - @godot-game-developer 基于确认的问题根因，设计具体的修复方案
+   - 评估方案的影响范围和潜在风险
+   - 向用户展示修复方案并请求确认，如用户不认可则重新设计
 
-- 每个缩进的缩进级别必须大于包含该缩进的代码块的缩进级别。
-  规范示例:
-  ```gdscript
-  for i in range(10):
-	print("hello")
-  ```
+6. **代码实施**：
+   - @godot-game-developer 按照确认的修复方案实施代码修改
+   - 确保所有修改严格遵循 `gdscript编码规范`
+   - 进行必要的测试验证，确保问题得到解决且未引入新问题
 
-  不规范示例:
-  ```gdscript
-  for i in range(10):
-  print("hello")
+## GDScript 编码规范
 
-  for i in range(10):
-		print("hello")
-  ```
-- 使用2个缩进级别来区分续行代码块与常规代码块。
-  规范示例:
-  ```gdscript
-  effect.interpolate_property(sprite, "transform/scale",
+### 基础规范
+
+#### 文件格式
+- **编码**：使用不带 BOM 的 UTF-8 编码
+- **换行符**：统一使用 LF（\n）换行，避免使用 CRLF 或 CR
+- **文件结尾**：每个文件末尾必须包含一个换行符
+- **缩进**：使用制表符（Tab）而非空格进行缩进
+
+#### 代码结构
+- **函数与类定义**：用两个空行包围函数和类定义
+- **续行缩进**：使用 2 个额外的缩进级别区分续行代码块
+- **数组/字典/枚举**：作为例外，仅使用单个缩进级别
+
+#### 命名约定
+- **未使用参数**：函数签名中未使用的参数以 `_` 开头
+- **自注释代码**：优先使用清晰的命名替代注释
+- **日志输出**：避免使用 `print()` 打印日志
+
+### 代码示例
+
+#### 正确的缩进示例
+```gdscript
+# 基本缩进
+for i in range(10):
+	pass
+
+# 续行缩进
+effect.interpolate_property(sprite, "transform/scale",
 		sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
-  ```
 
-  不规范示例:
-  ```gdscript
-  effect.interpolate_property(sprite, "transform/scale",
+# 数组/字典续行
+var positions = [
+	Vector2(0, 0),
+	Vector2(100, 50),
+	Vector2(-50, 75)
+]
+```
+
+#### 错误的缩进示例
+```gdscript
+# 缩进不足
+for i in range(10):
+print("hello")
+
+# 缩进过度
+for i in range(10):
+		print("hello")
+
+# 续行缩进不足
+effect.interpolate_property(sprite, "transform/scale",
 	sprite.get_scale(), Vector2(2.0, 2.0), 0.3,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
-  ```
-  此规则的例外：数组、字典和枚举。使用单个缩进级别来区分续行代码块。
-
-- 用两个空行来包围函数和类定义
-
-### 编码
-
-- gdscript的func签名里的参数如果没有在func的实现中使用，请用`_`作为参数名的开头
-- 请不要使用`print`打印日志
-- 请尽量减少代码注释，而是使用代码的名称自注释
+```

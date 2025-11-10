@@ -89,18 +89,44 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/U
 > [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
 
 
+#### filesystem
 ```bash
-# filesystem
 npm i -g @modelcontextprotocol/server-filesystem
-## windows
-claude mcp add filesystem -s user -- filesystem-mcp-server D:/workspace/code
-## mac
-claude mcp add filesystem -s user -- filesystem-mcp-server /Users/xuyulu/workspace/code
+```
 
-# thinking
+```json
+"filesystem": {
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-filesystem",
+    "/Users/xuyulu/workspace/code"
+  ]
+}
+```
+
+#### thinking
+```bash
 npm i -g @modelcontextprotocol/server-sequential-thinking
 claude mcp add thinking -s user -- server-sequential-thinking
 ```
+
+```json
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+```
+
+#### openmemory-mcp
+```bash
+docker run -d --restart=always -p 8080:8080 mem0ai/openmemory-mcp
+```
+
+
 
 ```plaintext
 请在claude code中全局配置`mcp-server-memory`，对接到QDRANT，以保存记忆。QDRANT的访问地址 http://localhost:6333

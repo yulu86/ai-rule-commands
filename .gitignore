@@ -12,5 +12,5 @@ build/
 
 **/*~
 
-settings.local.json
+**/settings.local.json
 router.js

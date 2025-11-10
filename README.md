@@ -88,6 +88,7 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/U
 > [https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file](https://github.com/punkpeye/awesome-mcp-servers?tab=readme-ov-file)
 > [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
 
+
 ```bash
 # filesystem
 npm i -g @modelcontextprotocol/server-filesystem

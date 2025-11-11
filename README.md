@@ -121,6 +121,23 @@ claude mcp add thinking -s user -- server-sequential-thinking
     }
 ```
 
+#### server-memory
+```bash
+npm i -g @modelcontextprotocol/server-memory
+```
+
+```json
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    }
+```
+
+
+
 ### godot-mcp
 [godot-mcp](https://github.com/Coding-Solo/godot-mcp)
 

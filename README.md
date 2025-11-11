@@ -121,15 +121,39 @@ claude mcp add thinking -s user -- server-sequential-thinking
     }
 ```
 
-#### openmemory-mcp
-```bash
-docker run -d --restart=always -p 8080:8080 mem0ai/openmemory-mcp
+### godot-mcp
+[godot-mcp](https://github.com/Coding-Solo/godot-mcp)
+
+```json
+    "godot": {
+      "command": "node",
+      "args": ["D:/workspace/code/01_AI/godot-mcp/build/index.js"],
+      "env": {
+        "DEBUG": "false"
+      }
+    }
 ```
 
+### context7-mcp
+```bash
+npm -g install @upstash/context7-mcp
+```
 
+```json
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {
+        "api-key": "<api-key>"
+      }
+    }
+```
 
-```plaintext
-请在claude code中全局配置`mcp-server-memory`，对接到QDRANT，以保存记忆。QDRANT的访问地址 http://localhost:6333
+> 提示词中增加 `use context7`
+
 ```
 
 ### 3.3 安装配置`claude-code-router`

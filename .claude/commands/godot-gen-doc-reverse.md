@@ -16,10 +16,10 @@ argument-hint: "[分析主题]"
 
 2. **项目信息收集**：
    - @godot-architect 读取项目配置文件 CLAUDE.md，了解项目基本信息和架构
-   - 分析项目整体结构、技术栈和开发规范
+   - 分析项目整体结构、技术栈和开发规范 use context7
 
 3. **代码深度分析**：
-   - @godot-architect 根据分析主题 $ARGUMENTS 读取相关代码文件
+   - @godot-architect 根据分析主题 $ARGUMENTS 读取相关代码文件 use context7
    - **功能识别**：分析代码实现的核心功能和业务逻辑
    - **架构解析**：理解代码的模块结构和设计模式
    - **依赖关系**：梳理各模块间的依赖和交互关系

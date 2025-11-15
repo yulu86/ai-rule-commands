@@ -136,6 +136,20 @@ npm i -g @modelcontextprotocol/server-memory
     }
 ```
 
+#### tavily-mcp
+```bash
+npm i -g tavily-mcp@latest
+```
+
+```json
+    "tavily-mcp": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@latest"],
+      "env": {
+        "TAVILY_API_KEY": "your-api-key-here"
+      }
+    }
+```
 
 
 ### godot-mcp

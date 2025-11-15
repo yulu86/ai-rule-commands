@@ -33,7 +33,7 @@
 				"use": [
 					"maxtoken",
 					{
-						"max_tokens": 65536
+						"max_tokens": 262144
 					}
 				]
 			}
@@ -49,7 +49,7 @@
 				"use": [
 					"maxtoken",
 					{
-						"max_tokens": 65536
+						"max_tokens": 262144
 					}
 				]
 			}

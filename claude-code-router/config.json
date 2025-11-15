@@ -3,7 +3,7 @@
 	"Providers": [
 		{
 			"name": "deepseek",
-			"api_base_url": "https://api.deepseek.com/anthropic",
+			"api_base_url": "https://api.deepseek.com/chat/completions",
 			"api_key": "<key>",
 			"models": [
 				"deepseek-chat",
@@ -11,13 +11,18 @@
 			],
 			"transformer": {
 				"use": [
-					"Anthropic"
-				]
+					"deepseek"
+				],
+				"deepseek-chat": {
+					"use": [
+						"tooluse"
+					]
+				}
 			}
 		},
 		{
 			"name": "moonshot",
-			"api_base_url": "https://api.moonshot.cn/anthropic",
+			"api_base_url": "https://api.moonshot.cn/v1/chat/completions",
 			"api_key": "<key>",
 			"models": [
 				"kimi-k2-0905-preview",
@@ -26,20 +31,26 @@
 			],
 			"transformer": {
 				"use": [
-					"Anthropic"
+					"maxtoken",
+					{
+						"max_tokens": 65536
+					}
 				]
 			}
 		},
 		{
 			"name": "glm",
-			"api_base_url": "https://open.bigmodel.cn/api/anthropic",
+			"api_base_url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
 			"api_key": "<key>",
 			"models": [
-				"GLM-4.6"
+				"glm-4.6"
 			],
 			"transformer": {
 				"use": [
-					"Anthropic"
+					"maxtoken",
+					{
+						"max_tokens": 65536
+					}
 				]
 			}
 		},
@@ -53,7 +64,7 @@
 		}
 	],
 	"Router": {
-		"default": "glm,GLM-4.6",
+		"default": "glm,glm-4.6",
 		"background": "ollama,qwen3-coder:30b",
 		"think": "deepseek,deepseek-reasoner",
 		"webSearch": "moonshot,kimi-k2-0905-preview",

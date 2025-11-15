@@ -1,5 +1,4 @@
 {
-	"PROXY_URL": "http://127.0.0.1:7890",
 	"API_TIMEOUT_MS": 600000,
 	"Providers": [
 		{

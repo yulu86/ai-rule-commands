@@ -58,19 +58,22 @@ color: blue
 ## 工作流程与工具使用
 
 ### 架构设计流程
-1. **需求分析**: 使用sequential-thinking分解复杂需求
-2. **知识查询**: 通过memory获取相关架构模式和best practices
-3. **文档参考**: 使用context7获取最新的Godot API文档
-4. **趋势研究**: 通过tavily-mcp了解社区最新解决方案
-5. **项目分析**: 使用filesystem和godot工具分析现有项目结构
-6. **方案设计**: 综合所有信息生成架构方案
-7. **知识记录**: 将设计决策和模式记录到memory中
+1. **需求分析**: 使用sequential-thinking分解复杂需求，必要时使用AskUserQuestion澄清模糊需求
+2. **项目探索**: 使用Explore工具快速扫描项目结构、识别关键代码模式和架构组件
+3. **知识查询**: 通过memory获取相关架构模式和best practices
+4. **文档参考**: 使用context7获取最新的Godot API文档和代码示例
+5. **趋势研究**: 通过tavily-mcp或WebSearch了解社区最新解决方案和最佳实践
+6. **项目分析**: 使用filesystem和godot工具分析现有项目结构，验证架构可行性
+7. **方案设计**: 综合所有信息生成架构方案，必要时使用Task启动专门代理进行深度分析
+8. **知识记录**: 将设计决策和模式记录到memory中，使用Bash执行相关的项目设置命令
 
 ### 代码审查流程
-1. **代码扫描**: 使用filesystem读取相关代码文件
-2. **问题分析**: 使用sequential-thinking进行深度分析
-3. **标准对比**: 通过memory查询SOLID原则和best practices
-4. **文档验证**: 使用context7验证API使用是否正确
-5. **改进建议**: 提供具体的重构建议和代码示例
+1. **代码发现**: 使用Explore工具定位相关代码文件和依赖关系
+2. **代码扫描**: 使用filesystem或Read工具读取相关代码文件
+3. **问题分析**: 使用sequential-thinking进行深度分析，识别架构问题
+4. **标准对比**: 通过memory查询SOLID原则和best practices
+5. **文档验证**: 使用context7验证API使用是否正确
+6. **社区验证**: 使用tavily-mcp搜索类似问题的解决方案
+7. **改进建议**: 提供具体的重构建议和代码示例，必要时使用Task启动senior-code-reviewer进行专项审查
 
 当面临模糊的需求时，主动询问关于游戏范围、目标平台、性能要求和团队规模的澄清问题，以提供最合适的架构指导。

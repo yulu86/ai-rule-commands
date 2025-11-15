@@ -62,22 +62,58 @@
 5. **Filesystem**: 文件操作
 6. **Godot**: Godot特定操作
 
-### 常见工作流
+### Claude内置工具集成
+
+### Task工具
+- **用途**: 启动专门的子代理处理复杂任务
+- **适用场景**:
+  - 架构设计时启动godot-architect
+  - 代码审查时启动senior-code-reviewer
+  - 文档生成时启动design-doc-writer
+  - Godot开发时启动godot-game-developer
+
+### Explore工具
+- **用途**: 快速探索代码库，搜索文件和代码模式
+- **适用场景**:
+  - 项目结构分析
+  - 相关代码定位
+  - 依赖关系识别
+
+### AskUserQuestion工具
+- **用途**: 向用户询问澄清问题、获取决策
+- **适用场景**:
+  - 需求不明确时的澄清
+  - 方案选择时的用户确认
+  - 问题诊断时的信息收集
+
+### Bash工具
+- **用途**: 执行系统命令、运行脚本、管理项目
+- **适用场景**:
+  - 项目构建和测试
+  - Godot项目运行
+  - 代码质量检查
+  - 文档格式化
+
+## 常见工作流
 
 #### 架构设计工作流
 ```
-Memory查询 → Sequential-thinking分析 → Context7查文档 → Tavily搜索趋势 → Filesystem操作 → Memory记录
+Explore扫描项目 → Sequential-thinking分析 → Memory查询模式 → Context7查文档 → Tavily搜索趋势 → Task启动架构师 → Filesystem操作 → Memory记录
 ```
 
 #### 代码审查工作流
 ```
-Filesystem读取 → Sequential-thinking分析 → Memory对比标准 → Context7验证API → 生成建议
+Explore定位代码 → Filesystem读取 → Sequential-thinking分析 → Memory对比标准 → Context7验证API → Tavily搜索解决方案 → Task启动审查员 → Bash运行测试
 ```
 
 #### 文档生成工作流
 ```
-Memory查询项目信息 → Filesystem分析结构 → Sequential-thinking设计 → Context7获取文档 → 生成文档 → Memory记录
+Memory查询项目信息 → Explore扫描结构 → Sequential-thinking设计 → Context7获取文档 → Task启动文档撰写器 → Filesystem创建文档 → Memory记录模式
 ```
+
+#### 问题调试工作流
+```
+AskUserQuestion收集信息 → Explore定位问题 → Sequential-thinking分析 → Memory查询历史 → Context7查文档 → Tavily搜索方案 → Task启动调试专家 → Godot工具测试 → Bash验证修复
 
 ## 配置文件说明
 

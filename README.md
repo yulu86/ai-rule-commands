@@ -185,6 +185,18 @@ npm -g install @upstash/context7-mcp
 
 > 提示词中增加 `use context7`
 
+
+
+### chrome-devtools-mcp
+```bash
+npm -g install chrome-devtools-mcp
+```
+
+```json
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest"]
+    }
 ```
 
 ### 3.3 安装配置`claude-code-router`

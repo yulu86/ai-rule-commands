@@ -94,7 +94,17 @@ argument-hint: "[commit类型或自定义描述]"
 - **执行提交**：
   - 根据用户确认执行 `git commit`
   - 使用生成的或确认的 commit 消息
+  - **重要：生成纯净的commit消息，不包含任何AI工具标识**
   - 提供执行结果反馈
+
+## 重要说明
+
+**执行commit时严格禁止添加以下自动生成标识：**
+- 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+- Co-Authored-By: Claude <noreply@anthropic.com>
+- 任何其他AI工具的自动生成标记
+
+commit消息应该保持简洁、专业，只包含实际的变更描述，不包含工具使用痕迹。
 
 ### 7. 高级功能
 - **批量提交处理**：

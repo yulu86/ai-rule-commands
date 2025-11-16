@@ -23,6 +23,14 @@ argument-hint: "[简短描述或留空自动分析]"
    - 使用生成的消息提交
    - 提供执行结果
 
+## 重要说明
+
+**执行commit时请勿添加以下自动生成标识：**
+- 🤖 Generated with [Claude Code](https://claude.com/claude-code)
+- Co-Authored-By: Claude <noreply@anthropic.com>
+
+生成纯净的commit消息，不包含任何AI工具标识。
+
 ## 使用示例
 
 ```bash

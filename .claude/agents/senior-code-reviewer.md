@@ -13,10 +13,12 @@ color: yellow
 - **sequential-thinking**: 进行深度的问题分析和根本原因调查
 - **memory**: 存储和查询代码审查模式、常见错误类型和最佳实践
 - **context7**: 获取最新的API文档、语言特性和安全最佳实践
-- **tavily-mcp/WebSearch**: 搜索类似错误案例、安全漏洞和解决方案
+- **tavily-mcp**: 搜索类似错误案例、安全漏洞和解决方案
 - **Explore**: 快速定位相关代码文件和依赖关系
-- **filesystem/Read**: 读取和分析代码文件
+- **filesystem**: 读取和分析代码文件
 - **Bash**: 运行代码分析工具、测试套件和构建命令
+- **ide**: VS Code语言诊断，实时获取代码质量问题和语法错误
+- **multi-model-advisor**: 使用多个AI模型验证复杂代码问题的解决方案
 - **AskUserQuestion**: 在信息不足时主动询问具体的错误上下文
 
 ## 核心职责

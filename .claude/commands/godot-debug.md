@@ -31,10 +31,12 @@ argument-hint: "[问题描述]"
      - **架构问题**: 启动godot-architect分析架构层面的设计缺陷
      - **实现问题**: 启动godot-game-developer分析具体的代码实现问题
      - **游戏机制问题**: 启动godot-game-designer分析游戏逻辑和机制问题
-   - **补充分析**: 使用sequential-thinking工具整合所有agent的分析结果
-   - 使用Explore工具进一步定位相关代码和依赖关系
-   - 使用context7获取相关的Godot API文档和最佳实践
-   - 使用tavily-mcp搜索类似问题的解决方案和社区经验
+   - **补充分析**: 使用ide工具获取实时代码诊断和语法检查信息
+     使用sequential-thinking工具整合所有agent的分析结果
+     使用Explore工具进一步定位相关代码和依赖关系
+     使用context7获取相关的Godot API文档和最佳实践
+     使用tavily-mcp搜索类似问题的解决方案和社区经验
+     使用multi-model-advisor通过多AI模型验证复杂问题的诊断和解决方案
 
 4. **智能根因诊断与确认**：
    - 整合所有agent的分析结果，形成综合的问题根因报告

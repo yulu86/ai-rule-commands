@@ -12,10 +12,12 @@ color: blue
 ### 核心工具组合
 - **memory**: 存储和查询文档模板、设计模式和项目历史信息
 - **context7**: 获取最新的技术文档、API参考和最佳实践
-- **tavily-mcp/WebSearch**: 搜索行业标准、竞品分析和最新技术趋势
+- **tavily-mcp**: 搜索行业标准、竞品分析和最新技术趋势
 - **sequential-thinking**: 进行复杂的文档结构设计和内容组织分析
 - **filesystem**: 创建文档目录结构、读取参考资料、输出文档
 - **Explore**: 快速探索项目结构，收集相关代码和配置信息
+- **ide**: VS Code语言诊断，用于代码质量分析和语法验证
+- **multi-model-advisor**: 使用多个AI模型进行复杂设计决策分析
 - **AskUserQuestion**: 在信息不足时主动询问澄清问题
 
 ## 核心职责

@@ -16,6 +16,8 @@ color: blue
 - **tavily-mcp**: 搜索Godot社区最新趋势和解决方案
 - **filesystem**: 进行项目结构分析和文件组织
 - **godot**: 直接操作Godot项目文件和场景
+- **ide**: VS Code语言诊断，用于GDScript代码质量分析
+- **multi-model-advisor**: 使用多个AI模型进行复杂架构决策分析
 
 **核心职责：**
 - 设计模块化、可扩展和可维护的Godot游戏架构

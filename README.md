@@ -151,8 +151,7 @@ npm i -g tavily-mcp@latest
     }
 ```
 
-
-### godot-mcp
+#### godot-mcp
 [godot-mcp](https://github.com/Coding-Solo/godot-mcp)
 
 ```json
@@ -165,7 +164,7 @@ npm i -g tavily-mcp@latest
     }
 ```
 
-### context7-mcp
+#### context7-mcp
 ```bash
 npm -g install @upstash/context7-mcp
 ```
@@ -185,9 +184,7 @@ npm -g install @upstash/context7-mcp
 
 > 提示词中增加 `use context7`
 
-
-
-### chrome-devtools-mcp
+#### chrome-devtools-mcp
 ```bash
 npm -g install chrome-devtools-mcp
 ```
@@ -198,6 +195,26 @@ npm -g install chrome-devtools-mcp
       "args": ["-y", "chrome-devtools-mcp@latest"]
     }
 ```
+
+#### [multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp)
+
+```bash
+git clone https://gh-proxy.com/https://github.com/YuChenSSR/multi-ai-advisor-mcp.git 
+cd multi-ai-advisor-mcp
+
+npm install
+npm run build
+```
+
+```json
+    "multi-model-advisor": {
+      "command": "node",
+      "args": [
+        "D:/workspace/code/01_AI/multi-ai-advisor-mcp/build/index.js"
+      ]
+    }
+```
+
 
 ### 3.3 安装配置`claude-code-router`
 

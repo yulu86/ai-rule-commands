@@ -29,6 +29,8 @@ argument-hint: [技术领域] [候选技术] [分析深度]
 
 # 执行步骤
 
+**当前技术选型目标**: $ARGUMENTS
+
 ## 第一阶段：需求分析与候选技术识别
 ### 工具使用：sequential-thinking + memory + tavily-mcp
 

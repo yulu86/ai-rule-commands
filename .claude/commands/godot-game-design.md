@@ -13,6 +13,8 @@ argument-hint: [关键词/主题] [游戏类型] [目标平台] [项目规模]
 
 # 执行步骤
 
+**当前游戏设计目标**: $ARGUMENTS
+
 ## 第一阶段：概念分析与创意生成
 ### 工具使用：tavily-mcp + sequential-thinking + memory
 

@@ -31,6 +31,8 @@ argument-hint: [系统/模块] [架构类型] [设计深度]
 
 # 执行步骤
 
+**当前架构设计目标**: $ARGUMENTS
+
 ## 第一阶段：架构需求分析与评估
 ### 工具使用：sequential-thinking + memory + tavily-mcp
 

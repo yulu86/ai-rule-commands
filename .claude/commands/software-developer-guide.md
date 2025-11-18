@@ -31,6 +31,8 @@ argument-hint: [功能/模块] [编程语言] [实现深度]
 
 # 执行步骤
 
+**当前开发指导目标**: $ARGUMENTS
+
 ## 第一阶段：需求分析与技术选型
 ### 工具使用：sequential-thinking + memory + context7
 

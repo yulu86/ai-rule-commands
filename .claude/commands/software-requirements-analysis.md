@@ -196,6 +196,8 @@ argument-hint: [项目/功能] [需求类型] [分析深度]
 
 ## 主要交付物清单
 
+**目录**：docs/01_需求分析/ 
+
 ### 1. 软件需求规格说明书 (Software Requirements Specification)
 **文件名格式**: `srs_[项目名称]_[需求类型]_[分析深度]_[日期].md`
 

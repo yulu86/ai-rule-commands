@@ -196,6 +196,8 @@ argument-hint: [系统/模块] [架构类型] [设计深度]
 
 # 交付件说明
 
+**目录**：docs/02_架构设计/ 
+
 ## 主要交付物清单
 
 ### 1. 架构设计文档 (Architecture Design Document)

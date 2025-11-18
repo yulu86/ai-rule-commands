@@ -219,6 +219,7 @@ git log --oneline -1
 - **个性化**: 消息风格相对统一，个性化程度有限
 - **详细程度**: 复杂变更的详细说明可能不够充分
 - **技术深度**: 技术细节的描述可能比较简略
+- **禁止消息**: 禁止出现```🤖 Generated with [Claude Code](https://claude.com/claude-code)```和```Co-Authored-By: Claude <noreply@anthropic.com>```
 
 ### 使用场景约束
 - **变更复杂度**: 适合简单到中等复杂度的变更

@@ -184,7 +184,7 @@ npm -g install @upstash/context7-mcp
 
 > 提示词中增加 `use context7`
 
-#### chrome-devtools-mcp
+#### ~~chrome-devtools-mcp~~
 ```bash
 npm -g install chrome-devtools-mcp
 ```
@@ -196,7 +196,7 @@ npm -g install chrome-devtools-mcp
     }
 ```
 
-#### [multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp)
+#### ~~[multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp)~~
 
 ```bash
 git clone https://gh-proxy.com/https://github.com/YuChenSSR/multi-ai-advisor-mcp.git 

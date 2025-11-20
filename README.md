@@ -215,7 +215,16 @@ npm run build
     }
 ```
 
-### 3.3 安装配置`claude-code-router`
+### 3.3 增加`plugin marketplace`
+
+```bash
+git clone https://gh-proxy.org/https://github.com/anthropics/skills.git
+
+
+ln -s "/Users/xuyulu/workspace/code/01_AI/skills" "/Users/xuyulu/.claude/skills"
+```
+
+### 3.4 安装配置`claude-code-router`
 
 ```bash
 npm i -g @musistudio/claude-code-router

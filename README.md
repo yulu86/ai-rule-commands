@@ -215,17 +215,6 @@ npm run build
     }
 ```
 
-
-### [code-index-mcp](https://github.com/johnhuang316/code-index-mcp)
-
-
-```json
-    "code-index": {
-      "command": "uvx",
-      "args": ["/Users/xuyulu/workspace/code/01_AI/code-index-mcp"]
-    }
-```
-
 ### 3.3 安装配置`claude-code-router`
 
 ```bash

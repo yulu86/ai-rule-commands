@@ -128,16 +128,17 @@ docs: 更新API文档
 ## 质量保证
 
 ### 避免的内容
-- ❌ 工具签名信息（如"🤖 Generated with Claude Code"）
+- ❌ 工具签名信息（如"🤖 Generated with Claude Code"、"Co-Authored-By: Claude <noreply@anthropic.com>"）
 - ❌ Co-authored信息
 - ❌ 时间戳和版本号
 - ❌ 无意义的描述（"update"、"fix"）
+- 禁止出现```Co-Authored-By: Claude <noreply@anthropic.com>```、```🤖 Generated with [Claude Code](https://claude.com/claude-code)```
 
 ### 提交信息示例
 ✅ 正确示例：
 - "feat: 添加用户登录验证功能"
 - "fix: 修复商品页面响应式布局问题"  
-- "refactor: 更新数据库连接池配置"
+- "update: 更新数据库连接池配置"
 - "refactor: 优化订单查询性能"
 - "refactor: 重构支付模块代码结构"
 

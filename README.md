@@ -219,6 +219,7 @@ npm run build
 
 ```bash
 git clone https://gh-proxy.org/https://github.com/anthropics/skills.git
+git clone https://gh-proxy.org/https://github.com/bfollington/terma
 
 # mac
 ln -s "/Users/xuyulu/workspace/code/01_AI/skills" "/Users/xuyulu/.claude/skills"

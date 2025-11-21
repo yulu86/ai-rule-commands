@@ -215,13 +215,16 @@ npm run build
     }
 ```
 
-### 3.3 增加`plugin marketplace`
+### 3.3 增加`skills`
 
 ```bash
 git clone https://gh-proxy.org/https://github.com/anthropics/skills.git
 
-
+# mac
 ln -s "/Users/xuyulu/workspace/code/01_AI/skills" "/Users/xuyulu/.claude/skills"
+
+# windows
+mklink /d "C:\Users\Yulu Xu\.claude\skills" "D:\workspace\code\01_AI\ai-rule-commands\.claude\skills"
 ```
 
 ### 3.4 安装配置`claude-code-router`

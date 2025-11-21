@@ -1,33 +1,33 @@
 ---
 name: godot
-description: This skill should be used when working on Godot Engine projects. It provides specialized knowledge of Godot's file formats (.gd, .tscn, .tres), architecture patterns (component-based, signal-driven, resource-based), common pitfalls, validation tools, code templates, and CLI workflows. The `godot` command is available for running the game, validating scripts, importing resources, and exporting builds. Use this skill for tasks involving Godot game development, debugging scene/resource files, implementing game systems, or creating new Godot components.
+description: 在处理 Godot 引擎项目时应使用此技能。它提供关于 Godot 文件格式（.gd、.tscn、.tres）、架构模式（基于组件、信号驱动、基于资源）、常见陷阱、验证工具、代码模板和 CLI 工作流的专业知识。`godot` 命令可用于运行游戏、验证脚本、导入资源和导出构建。在涉及 Godot 游戏开发、调试场景/资源文件、实现游戏系统或创建新的 Godot 组件的任务时使用此技能。
 ---
 
-# Godot Engine Development Skill
+# Godot 引擎开发技能
 
-Specialized guidance for developing games and applications with Godot Engine, with emphasis on effective collaboration between LLM coding assistants and Godot's unique file structure.
+使用 Godot 引擎开发游戏和应用程序的专业指导，强调 LLM 编程助手与 Godot 独特文件结构之间的有效协作。
 
-## Overview
+## 概述
 
-Godot projects use a mix of GDScript code files (.gd) and text-based resource files (.tscn for scenes, .tres for resources). While GDScript is straightforward, the resource files have strict formatting requirements that differ significantly from GDScript syntax. This skill provides file format expertise, proven architecture patterns, validation tools, code templates, and debugging workflows to enable effective development of Godot projects.
+Godot 项目混合使用 GDScript 代码文件（.gd）和基于文本的资源文件（.tscn 用于场景，.tres 用于资源）。虽然 GDScript 很简单，但资源文件有着严格的格式要求，与 GDScript 语法有显著差异。此技能提供文件格式专业知识、经过验证的架构模式、验证工具、代码模板和调试工作流，以实现 Godot 项目的有效开发。
 
-## When to Use This Skill
+## 何时使用此技能
 
-Invoke this skill when:
+在以下情况下调用此技能：
 
-- Working on any Godot Engine project
-- Creating or modifying .tscn (scene) or .tres (resource) files
-- Implementing game systems (interactions, attributes, spells, inventory, etc.)
-- Debugging "file failed to load" or similar resource errors
-- Setting up component-based architectures
-- Creating signal-driven systems
-- Implementing resource-based data (items, spells, abilities)
+- 处理任何 Godot 引擎项目时
+- 创建或修改 .tscn（场景）或 .tres（资源）文件时
+- 实现游戏系统（交互、属性、法术、物品栏等）时
+- 调试"文件加载失败"或类似的资源错误时
+- 设置基于组件的架构时
+- 创建信号驱动的系统时
+- 实现基于资源的数据（物品、法术、能力）时
 
-## Key Principles
+## 核心原则
 
-### 1. Understand File Format Differences
+### 1. 理解文件格式差异
 
-**GDScript (.gd) - Full Programming Language:**
+**GDScript (.gd) - 完整的编程语言：**
 ```gdscript
 extends Node
 class_name MyClass
@@ -39,200 +39,200 @@ func _ready():
     print("Ready")
 ```
 
-**Scene Files (.tscn) - Strict Serialization Format:**
+**场景文件 (.tscn) - 严格的序列化格式：**
 ```
 [ext_resource type="Script" path="res://script.gd" id="1"]
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1")  # NOT preload()!
+script = ExtResource("1")  # 不要用 preload()!
 ```
 
-**Resource Files (.tres) - NO GDScript Syntax:**
+**资源文件 (.tres) - 不包含 GDScript 语法：**
 ```
 [ext_resource type="Script" path="res://item.gd" id="1"]
 
 [resource]
-script = ExtResource("1")  # NOT preload()!
-item_name = "Sword"        # NOT var item_name = "Sword"!
+script = ExtResource("1")  # 不要用 preload()!
+item_name = "Sword"        # 不要用 var item_name = "Sword"!
 ```
 
-### 2. Critical Rules for .tres and .tscn Files
+### 2. .tres 和 .tscn 文件的关键规则
 
-**NEVER use in .tres/.tscn files:**
-- `preload()` - Use `ExtResource("id")` instead
-- `var`, `const`, `func` - These are GDScript keywords
-- Untyped arrays - Use `Array[Type]([...])` syntax
+**在 .tres/.tscn 文件中绝不要使用：**
+- `preload()` - 改用 `ExtResource("id")`
+- `var`, `const`, `func` - 这些是 GDScript 关键字
+- 无类型数组 - 使用 `Array[Type]([...])` 语法
 
-**ALWAYS use in .tres/.tscn files:**
-- `ExtResource("id")` for external resources
-- `SubResource("id")` for inline resources
-- Typed arrays: `Array[Resource]([...])`
-- Proper ExtResource declarations before use
+**在 .tres/.tscn 文件中总是使用：**
+- `ExtResource("id")` 用于外部资源
+- `SubResource("id")` 用于内联资源
+- 类型化数组：`Array[Resource]([...])`
+- 在使用前正确声明 ExtResource
 
-### 3. Separation of Concerns
+### 3. 关注点分离
 
-**Keep logic in .gd files, data in .tres files:**
+**将逻辑放在 .gd 文件中，数据放在 .tres 文件中：**
 ```
 src/
   spells/
-    spell_resource.gd      # Class definition + logic
-    spell_effect.gd        # Effect logic
+    spell_resource.gd      # 类定义 + 逻辑
+    spell_effect.gd        # 效果逻辑
 resources/
   spells/
-    fireball.tres          # Data only, references scripts
-    ice_spike.tres         # Data only
+    fireball.tres          # 仅数据，引用脚本
+    ice_spike.tres         # 仅数据
 ```
 
-This makes LLM editing much safer and clearer.
+这使得 LLM 编辑更安全、更清晰。
 
-### 4. Component-Based Architecture
+### 4. 基于组件的架构
 
-Break functionality into small, focused components:
+将功能分解为小的、专注的组件：
 ```
 Player (CharacterBody3D)
-├─ HealthAttribute (Node)     # Component
-├─ ManaAttribute (Node)        # Component
-├─ Inventory (Node)            # Component
-└─ StateMachine (Node)         # Component
+├─ HealthAttribute (Node)     # 组件
+├─ ManaAttribute (Node)        # 组件
+├─ Inventory (Node)            # 组件
+└─ StateMachine (Node)         # 组件
     ├─ IdleState (Node)
     ├─ MoveState (Node)
     └─ AttackState (Node)
 ```
 
-**Benefits:**
-- Each component is a small, focused file
-- Easy to understand and modify
-- Clear responsibilities
-- Reusable across different entities
+**优点：**
+- 每个组件都是小的、专注的文件
+- 易于理解和修改
+- 责任清晰
+- 可在不同实体间重用
 
-### 5. Signal-Driven Communication
+### 5. 信号驱动通信
 
-Use signals for loose coupling:
+使用信号实现松耦合：
 ```gdscript
-# Component emits signals
+# 组件发出信号
 signal health_changed(current, max)
 signal death()
 
-# Parent connects to signals
+# 父节点连接到信号
 func _ready():
     $HealthAttribute.health_changed.connect(_on_health_changed)
     $HealthAttribute.death.connect(_on_death)
 ```
 
-**Benefits:**
-- No tight coupling between systems
-- Easy to add new listeners
-- Self-documenting (signals show available events)
-- UI can connect without modifying game logic
+**优点：**
+- 系统间没有紧密耦合
+- 易于添加新的监听器
+- 自文档化（信号显示可用事件）
+- UI 可以在不修改游戏逻辑的情况下连接
 
-## Using Bundled Resources
+## 使用捆绑资源
 
-### Validation Scripts
+### 验证脚本
 
-Validate .tres and .tscn files before testing in Godot to catch syntax errors early.
+在 Godot 中测试之前验证 .tres 和 .tscn 文件，以尽早发现语法错误。
 
-**Validate .tres file:**
+**验证 .tres 文件：**
 ```bash
 python3 scripts/validate_tres.py resources/spells/fireball.tres
 ```
 
-**Validate .tscn file:**
+**验证 .tscn 文件：**
 ```bash
 python3 scripts/validate_tscn.py scenes/player/player.tscn
 ```
 
-Use these scripts when:
-- After creating or editing .tres/.tscn files programmatically
-- When debugging "failed to load" errors
-- Before committing scene/resource changes
-- When user reports issues with custom resources
+在以下情况下使用这些脚本：
+- 在以编程方式创建或编辑 .tres/.tscn 文件后
+- 调试"加载失败"错误时
+- 在提交场景/资源更改前
+- 当用户报告自定义资源问题时
 
-### Reference Documentation
+### 参考文档
 
-Load reference files when needed for detailed information:
+在需要详细信息时加载参考文件：
 
-**`references/file-formats.md`** - Deep dive into .gd, .tscn, .tres syntax:
-- Complete syntax rules for each file type
-- Common mistakes with examples
-- Safe vs risky editing patterns
-- ExtResource and SubResource usage
+**`references/file-formats.md`** - 深入了解 .gd、.tscn、.tres 语法：
+- 每种文件类型的完整语法规则
+- 常见错误及示例
+- 安全与风险编辑模式
+- ExtResource 和 SubResource 的使用
 
-**`references/architecture-patterns.md`** - Proven architectural patterns:
-- Component-based interaction system
-- Attribute system (health, mana, etc.)
-- Resource-based effect system (spells, items)
-- Inventory system
-- State machine pattern
-- Examples of combining patterns
+**`references/architecture-patterns.md`** - 经过验证的架构模式：
+- 基于组件的交互系统
+- 属性系统（生命值、魔力等）
+- 基于资源的效果系统（法术、物品）
+- 物品栏系统
+- 状态机模式
+- 模式组合示例
 
-Read these references when:
-- Implementing new game systems
-- Unsure about .tres/.tscn syntax
-- Debugging file format errors
-- Planning architecture for new features
+在以下情况下阅读这些参考：
+- 实现新的游戏系统时
+- 对 .tres/.tscn 语法不确定时
+- 调试文件格式错误时
+- 为新功能规划架构时
 
-### Code Templates
+### 代码模板
 
-Use templates as starting points for common patterns. Templates are in `assets/templates/`:
+使用模板作为常见模式的起点。模板位于 `assets/templates/`：
 
-**`component_template.gd`** - Base component with signals, exports, activation:
+**`component_template.gd`** - 带有信号、导出、激活的基础组件：
 ```gdscript
-# Copy and customize for new components
+# 复制并自定义为新组件
 cp assets/templates/component_template.gd src/components/my_component.gd
 ```
 
-**`attribute_template.gd`** - Numeric attribute (health, mana, stamina):
+**`attribute_template.gd`** - 数值属性（生命值、魔力、体力）：
 ```gdscript
-# Use for any numeric attribute with min/max
+# 用于任何有最小/最大值的数值属性
 cp assets/templates/attribute_template.gd src/attributes/stamina_attribute.gd
 ```
 
-**`interaction_template.gd`** - Interaction component base class:
+**`interaction_template.gd`** - 交互组件基类：
 ```gdscript
-# Extend for custom interactions (pickup, door, switch, etc.)
+# 扩展为自定义交互（拾取、门、开关等）
 cp assets/templates/interaction_template.gd src/interactions/lever_interaction.gd
 ```
 
-**`spell_resource.tres`** - Example spell with effects:
+**`spell_resource.tres`** - 带有效果的法术示例：
 ```bash
-# Use as reference for creating new spell data
+# 用作创建新法术数据的参考
 cat assets/templates/spell_resource.tres
 ```
 
-**`item_resource.tres`** - Example item resource:
+**`item_resource.tres`** - 物品资源示例：
 ```bash
-# Use as reference for creating new item data
+# 用作创建新物品数据的参考
 cat assets/templates/item_resource.tres
 ```
 
-## Workflows
+## 工作流
 
-### Workflow 1: Creating a New Component System
+### 工作流 1：创建新的组件系统
 
-Example: Adding a health system to enemies.
+示例：为敌人添加生命值系统。
 
-**Steps:**
+**步骤：**
 
-1. **Read architecture patterns reference:**
+1. **阅读架构模式参考：**
    ```bash
-   # Check for similar patterns
+   # 检查类似模式
    Read references/architecture-patterns.md
-   # Look for "Attribute System" section
+   # 查找"属性系统"部分
    ```
 
-2. **Create base class using template:**
+2. **使用模板创建基类：**
    ```bash
    cp assets/templates/attribute_template.gd src/attributes/attribute.gd
-   # Customize the base class
+   # 自定义基类
    ```
 
-3. **Create specialized subclass:**
+3. **创建专门的子类：**
    ```bash
-   # Create health_attribute.gd extending attribute.gd
-   # Add health-specific signals (damage_taken, death)
+   # 创建扩展 attribute.gd 的 health_attribute.gd
+   # 添加生命值特定的信号（damage_taken、death）
    ```
 
-4. **Add to scene via .tscn edit:**
+4. **通过 .tscn 编辑添加到场景：**
    ```
    [ext_resource type="Script" path="res://src/attributes/health_attribute.gd" id="4_health"]
 
@@ -242,25 +242,25 @@ Example: Adding a health system to enemies.
    value_start = 50.0
    ```
 
-5. **Test immediately in Godot editor**
+5. **在 Godot 编辑器中立即测试**
 
-6. **If issues, validate the scene file:**
+6. **如果有问题，验证场景文件：**
    ```bash
    python3 scripts/validate_tscn.py scenes/enemies/base_enemy.tscn
    ```
 
-### Workflow 2: Creating Resource Data Files (.tres)
+### 工作流 2：创建资源数据文件（.tres）
 
-Example: Creating a new spell.
+示例：创建新法术。
 
-**Steps:**
+**步骤：**
 
-1. **Reference the template:**
+1. **参考模板：**
    ```bash
    cat assets/templates/spell_resource.tres
    ```
 
-2. **Create new .tres file with proper structure:**
+2. **使用正确结构创建新的 .tres 文件：**
    ```tres
    [gd_resource type="Resource" script_class="SpellResource" load_steps=3 format=3]
 
@@ -281,70 +281,70 @@ Example: Creating a new spell.
    effects = Array[ExtResource("2")]([SubResource("Effect_1")])
    ```
 
-3. **Validate before testing:**
+3. **测试前验证：**
    ```bash
    python3 scripts/validate_tres.py resources/spells/fireball.tres
    ```
 
-4. **Fix any errors reported by validator**
+4. **修复验证器报告的任何错误**
 
-5. **Test in Godot editor**
+5. **在 Godot 编辑器中测试**
 
-### Workflow 3: Debugging Resource Loading Issues
+### 工作流 3：调试资源加载问题
 
-When user reports "resource failed to load" or similar errors.
+当用户报告"资源加载失败"或类似错误时。
 
-**Steps:**
+**步骤：**
 
-1. **Read the file reported in error:**
+1. **读取报告错误的文件：**
    ```bash
-   # Check file syntax
+   # 检查文件语法
    Read resources/spells/problem_spell.tres
    ```
 
-2. **Run validation script:**
+2. **运行验证脚本：**
    ```bash
    python3 scripts/validate_tres.py resources/spells/problem_spell.tres
    ```
 
-3. **Check for common mistakes:**
-   - Using `preload()` instead of `ExtResource()`
-   - Using `var`, `const`, `func` keywords
-   - Missing ExtResource declarations
-   - Incorrect array syntax (not typed)
+3. **检查常见错误：**
+   - 使用 `preload()` 而不是 `ExtResource()`
+   - 使用 `var`、`const`、`func` 关键字
+   - 缺少 ExtResource 声明
+   - 不正确的数组语法（未类型化）
 
-4. **Read file format reference if needed:**
+4. **如需要，阅读文件格式参考：**
    ```bash
    Read references/file-formats.md
-   # Focus on "Resource Files (.tres)" section
-   # Check "Common Mistakes Reference"
+   # 关注"资源文件（.tres）"部分
+   # 查看"常见错误参考"
    ```
 
-5. **Fix errors and re-validate**
+5. **修复错误并重新验证**
 
-### Workflow 4: Implementing from Architecture Patterns
+### 工作流 4：从架构模式实现
 
-When implementing a known pattern (interaction system, state machine, etc.).
+当实现已知模式（交互系统、状态机等）时。
 
-**Steps:**
+**步骤：**
 
-1. **Read the relevant pattern:**
+1. **阅读相关模式：**
    ```bash
    Read references/architecture-patterns.md
-   # Find the specific pattern (e.g., "Component-Based Interaction System")
+   # 查找特定模式（例如，"基于组件的交互系统"）
    ```
 
-2. **Copy relevant template:**
+2. **复制相关模板：**
    ```bash
    cp assets/templates/interaction_template.gd src/interactions/door_interaction.gd
    ```
 
-3. **Customize the template:**
-   - Override `_perform_interaction()`
-   - Add custom exports for configuration
-   - Add custom signals if needed
+3. **自定义模板：**
+   - 重写 `_perform_interaction()`
+   - 添加配置的自定义导出
+   - 如需要，添加自定义信号
 
-4. **Create scene structure following pattern:**
+4. **按照模式创建场景结构：**
    ```
    [node name="Door" type="StaticBody3D"]
    script = ExtResource("base_interactable.gd")
@@ -354,38 +354,38 @@ When implementing a known pattern (interaction system, state machine, etc.).
    interaction_text = "Open Door"
    ```
 
-5. **Test incrementally**
+5. **增量测试**
 
-## Common Pitfalls and Solutions
+## 常见陷阱和解决方案
 
-### Pitfall 1: Using GDScript Syntax in .tres Files
+### 陷阱 1：在 .tres 文件中使用 GDScript 语法
 
-**Problem:**
+**问题：**
 ```tres
-# ❌ WRONG
+# ❌ 错误
 script = preload("res://script.gd")
 var items = [1, 2, 3]
 ```
 
-**Solution:**
+**解决方案：**
 ```tres
-# ✅ CORRECT
+# ✅ 正确
 [ext_resource type="Script" path="res://script.gd" id="1"]
 script = ExtResource("1")
 items = Array[int]([1, 2, 3])
 ```
 
-**Prevention:** Run validation script before testing.
+**预防：** 在测试前运行验证脚本。
 
-### Pitfall 2: Missing ExtResource Declarations
+### 陷阱 2：缺少 ExtResource 声明
 
-**Problem:**
+**问题：**
 ```tres
 [resource]
-script = ExtResource("1_script")  # Not declared!
+script = ExtResource("1_script")  # 未声明！
 ```
 
-**Solution:**
+**解决方案：**
 ```tres
 [ext_resource type="Script" path="res://script.gd" id="1_script"]
 
@@ -393,43 +393,43 @@ script = ExtResource("1_script")  # Not declared!
 script = ExtResource("1_script")
 ```
 
-**Detection:** Validation script will catch this.
+**检测：** 验证脚本会捕获此问题。
 
-### Pitfall 3: Editing Complex .tscn Hierarchies
+### 陷阱 3：编辑复杂的 .tscn 层次结构
 
-**Problem:** Modifying instanced scene children can break when editor re-saves.
+**问题：** 修改实例化场景的子节点可能在编辑器重新保存时破坏。
 
-**Solution:**
-- Make only simple property edits in .tscn files
-- For complex changes, use Godot editor
-- Test immediately after text edits
-- Use git to track changes and revert if needed
+**解决方案：**
+- 在 .tscn 文件中只做简单的属性编辑
+- 对于复杂更改，使用 Godot 编辑器
+- 文本编辑后立即测试
+- 使用 git 跟踪更改并在需要时回滚
 
-### Pitfall 4: Untyped Arrays in .tres Files
+### 陷阱 4：在 .tres 文件中使用无类型数组
 
-**Problem:**
+**问题：**
 ```tres
-effects = [SubResource("Effect_1")]  # Missing type
+effects = [SubResource("Effect_1")]  # 缺少类型
 ```
 
-**Solution:**
+**解决方案：**
 ```tres
 effects = Array[Resource]([SubResource("Effect_1")])
 ```
 
-**Prevention:** Validation script warns about this.
+**预防：** 验证脚本会警告此问题。
 
-### Pitfall 5: Forgetting Instance Property Overrides
+### 陷阱 5：忘记实例属性覆盖
 
-**Problem:** When instancing a scene, forgetting to override child node properties. The instance uses default values (often `null`), causing silent bugs.
+**问题：** 实例化场景时，忘记覆盖子节点属性。实例使用默认值（通常是 `null`），导致静默错误。
 
 ```
 # level.tscn
 [node name="KeyPickup" parent="." instance=ExtResource("6_pickup")]
-# Oops! PickupInteraction.item_resource is null - pickup won't work!
+# 糟糕！PickupInteraction.item_resource 为 null - 拾取不起作用！
 ```
 
-**Solution:** Always configure instanced scene properties using the `index` syntax:
+**解决方案：** 总是使用 `index` 语法配置实例化场景属性：
 
 ```
 [node name="KeyPickup" parent="." instance=ExtResource("6_pickup")]
@@ -438,26 +438,26 @@ effects = Array[Resource]([SubResource("Effect_1")])
 item_resource = ExtResource("7_key")
 ```
 
-**Detection:**
-- Test the instance in-game immediately
-- Read `references/file-formats.md` "Instance Property Overrides" section for details
-- When creating scene instances, ask: "Does this scene have configurable components that need properties set?"
+**检测：**
+- 立即在游戏中测试实例
+- 阅读 `references/file-formats.md` "实例属性覆盖" 部分了解详情
+- 创建场景实例时，问："这个场景是否有需要设置属性的可配置组件？"
 
-**Prevention:** After instancing any scene with configurable children (PickupInteraction, DoorInteraction, etc.), always verify critical properties are overridden.
+**预防：** 实例化任何具有可配置子节点的场景（PickupInteraction、DoorInteraction 等）后，总是验证关键属性已被覆盖。
 
-### Pitfall 6: CPUParticles3D color_ramp Not Displaying Colors
+### 陷阱 6：CPUParticles3D color_ramp 不显示颜色
 
-**Problem:** Setting `color_ramp` on CPUParticles3D, but particles still appear white or don't show the gradient colors.
+**问题：** 在 CPUParticles3D 上设置 `color_ramp`，但粒子仍然显示白色或不显示渐变颜色。
 
 ```tres
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 mesh = SubResource("SphereMesh_1")
-color_ramp = SubResource("Gradient_1")  # Gradient is set but doesn't work!
+color_ramp = SubResource("Gradient_1")  # 渐变已设置但不工作！
 ```
 
-**Root Cause:** The mesh needs a material with `vertex_color_use_as_albedo = true` to apply particle colors to the mesh surface.
+**根本原因：** 网格需要带有 `vertex_color_use_as_albedo = true` 的材质，才能将粒子颜色应用到网格表面。
 
-**Solution:** Add a StandardMaterial3D to the mesh with vertex color enabled:
+**解决方案：** 为网格添加启用顶点颜色的 StandardMaterial3D：
 
 ```tres
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1"]
@@ -470,199 +470,201 @@ height = 0.24
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 mesh = SubResource("SphereMesh_1")
-color_ramp = SubResource("Gradient_1")  # Now works!
+color_ramp = SubResource("Gradient_1")  # 现在有效了！
 ```
 
-**Prevention:** When creating CPUParticles3D with `color` or `color_ramp`, always add a material with `vertex_color_use_as_albedo = true` to the mesh.
+**预防：** 创建带有 `color` 或 `color_ramp` 的 CPUParticles3D 时，总是为网格添加带有 `vertex_color_use_as_albedo = true` 的材质。
 
-## Best Practices
+## 最佳实践
 
-### 1. Consult References for Common Issues
+### 1. 查阅参考资料解决常见问题
 
-When encountering issues, consult the reference documentation:
+遇到问题时，查阅参考文档：
 
-**`references/common-pitfalls.md`** - Common Godot gotchas and solutions:
-- Initialization and @onready timing issues
-- Node reference and get_node() problems
-- Signal connection issues
-- Resource loading and modification
-- CharacterBody3D movement
-- Transform and basis confusion
-- Input handling
-- Type safety issues
-- Scene instancing pitfalls
-- Tween issues
+**`use context7`** - 使用MCP Server context7查询godot API
 
-**`references/godot4-physics-api.md`** - Physics API quick reference:
-- Correct raycast API (`PhysicsRayQueryParameters3D`)
-- Shape queries and collision detection
-- Collision layers and masks
+**`references/common-pitfalls.md`** - 常见 Godot 陷阱和解决方案：
+- 初始化和 @onready 时序问题
+- 节点引用和 get_node() 问题
+- 信号连接问题
+- 资源加载和修改
+- CharacterBody3D 移动
+- 变换和基向量混淆
+- 输入处理
+- 类型安全问题
+- 场景实例化陷阱
+- 补间问题
+
+**`references/godot4-physics-api.md`** - 物理API快速参考：
+- 正确的光线投射API（`PhysicsRayQueryParameters3D`）
+- 形状查询和碰撞检测
+- 碰撞层和掩码
 - Area3D vs RigidBody3D vs CharacterBody3D
-- Common physics patterns
-- Performance tips
+- 常见物理模式
+- 性能技巧
 
-Load these when:
-- Getting null reference errors
-- Implementing physics/collision systems
-- Debugging timing issues with @onready
-- Working with CharacterBody3D movement
-- Setting up raycasts or shape queries
+在以下情况下加载这些参考资料：
+- 遇到空引用错误
+- 实现物理/碰撞系统
+- 调试 @onready 时序问题
+- 处理 CharacterBody3D 移动
+- 设置光线投射或形状查询
 
-### 2. Always Validate After Editing .tres/.tscn
+### 2. 编辑 .tres/.tscn 后总是验证
 
 ```bash
 python3 scripts/validate_tres.py path/to/file.tres
 python3 scripts/validate_tscn.py path/to/file.tscn
 ```
 
-### 2. Use Templates as Starting Points
+### 3. 使用模板作为起点
 
-Don't write components from scratch - adapt templates:
+不要从头开始编写组件 - 适配模板：
 ```bash
 cp assets/templates/component_template.gd src/my_component.gd
 ```
 
-### 3. Read References for Detailed Syntax
+### 4. 阅读参考资料了解详细语法
 
-When unsure about syntax, load the reference:
+对语法不确定时，加载参考资料：
 ```bash
 Read references/file-formats.md
 ```
 
-### 4. Follow Separation of Concerns
+### 5. 遵循关注点分离
 
-- Logic → .gd files
-- Data → .tres files
-- Scene structure → .tscn files (prefer editor for complex changes)
+- 逻辑 → .gd 文件
+- 数据 → .tres 文件
+- 场景结构 → .tscn 文件（复杂更改优先使用编辑器）
 
-### 5. Use Signals for Communication
+### 6. 使用信号进行通信
 
-Prefer signals over direct method calls:
+优先使用信号而不是直接方法调用：
 ```gdscript
-# ✅ Good - Loose coupling
+# ✅ 好的 - 松耦合
 signal item_picked_up(item)
 item_picked_up.emit(item)
 
-# ❌ Avoid - Tight coupling
+# ❌ 避免 - 紧耦合
 get_parent().get_parent().add_to_inventory(item)
 ```
 
-### 6. Test Incrementally
+### 7. 增量测试
 
-After each change:
-1. Validate with scripts
-2. Test in Godot editor
-3. Verify functionality
-4. Commit to git
+每次更改后：
+1. 使用脚本验证
+2. 在 Godot 编辑器中测试
+3. 验证功能
+4. 提交到 git
 
-### 7. Use Export Variables Liberally
+### 8. 充分使用导出变量
 
-Make configuration visible and editable:
+使配置可见和可编辑：
 ```gdscript
-@export_group("Movement")
+@export_group("移动")
 @export var speed: float = 5.0
 @export var jump_force: float = 10.0
 
-@export_group("Combat")
+@export_group("战斗")
 @export var damage: int = 10
 ```
 
-## Using the Godot CLI
+## 使用 Godot CLI
 
-The `godot` command-line tool is available for running the game and performing various operations without opening the editor.
+`godot` 命令行工具可用于运行游戏和执行各种操作，而无需打开编辑器。
 
-### Running the Game
+### 运行游戏
 
-**Run the current project:**
+**运行当前项目：**
 ```bash
 godot --path . --headless
 ```
 
-**Run a specific scene:**
+**运行特定场景：**
 ```bash
 godot --path . --scene scenes/main_menu.tscn
 ```
 
-**Run with debug flags:**
+**使用调试标志运行：**
 ```bash
-# Show collision shapes
+# 显示碰撞形状
 godot --path . --debug-collisions
 
-# Show navigation debug visuals
+# 显示导航调试可视化
 godot --path . --debug-navigation
 
-# Show path lines
+# 显示路径线条
 godot --path . --debug-paths
 ```
 
-### Checking/Validating Code
+### 检查/验证代码
 
-**Check GDScript syntax without running:**
+**检查 GDScript 语法而不运行：**
 ```bash
 godot --path . --check-only --script path/to/script.gd
 ```
 
-**Run headless tests (for automated testing):**
+**运行无头测试（用于自动化测试）：**
 ```bash
 godot --path . --headless --quit --script path/to/test_script.gd
 ```
 
-### Editor Operations from CLI
+### 从 CLI 执行编辑器操作
 
-**Import resources without opening editor:**
+**导入资源而不打开编辑器：**
 ```bash
 godot --path . --import --headless --quit
 ```
 
-**Export project:**
+**导出项目：**
 ```bash
-# Export release build
-godot --path . --export-release "Preset Name" builds/game.exe
+# 导出发布构建
+godot --path . --export-release "预设名称" builds/game.exe
 
-# Export debug build
-godot --path . --export-debug "Preset Name" builds/game_debug.exe
+# 导出调试构建
+godot --path . --export-debug "预设名称" builds/game_debug.exe
 ```
 
-### Common CLI Workflows
+### 常见的 CLI 工作流
 
-**Workflow: Quick Test Run**
+**工作流：快速测试运行**
 ```bash
-# Run the project and quit after testing
-godot --path . --quit-after 300  # Runs for 300 frames then quits
+# 运行项目并在测试后退出
+godot --path . --quit-after 300  # 运行300帧然后退出
 ```
 
-**Workflow: Automated Resource Import**
+**工作流：自动化资源导入**
 ```bash
-# Import all resources and exit (useful in CI/CD)
+# 导入所有资源并退出（在 CI/CD 中有用）
 godot --path . --import --headless --quit
 ```
 
-**Workflow: Script Validation**
+**工作流：脚本验证**
 ```bash
-# Validate a GDScript file before committing
+# 在提交前验证 GDScript 文件
 godot --path . --check-only --script src/player/player.gd
 ```
 
-**Workflow: Headless Server**
+**工作流：无头服务器**
 ```bash
-# Run as dedicated server (no rendering)
+# 作为专用服务器运行（无渲染）
 godot --path . --headless --scene scenes/multiplayer_server.tscn
 ```
 
-### CLI Usage Tips
+### CLI 使用技巧
 
-1. **Always specify `--path .`** when running from project directory to ensure Godot finds `project.godot`
-2. **Use `--headless`** for CI/CD and automated testing (no window, no rendering)
-3. **Use `--quit` or `--quit-after N`** to exit automatically after task completion
-4. **Combine `--check-only` with `--script`** to validate GDScript syntax quickly
-5. **Use debug flags** (`--debug-collisions`, `--debug-navigation`) to visualize systems during development
-6. **Check exit codes** - Non-zero indicates errors (useful for CI/CD scripts)
+1. **从项目目录运行时总是指定 `--path .`** 以确保 Godot 找到 `project.godot`
+2. **使用 `--headless`** 进行 CI/CD 和自动化测试（无窗口、无渲染）
+3. **使用 `--quit` 或 `--quit-after N`** 在任务完成后自动退出
+4. **结合 `--check-only` 和 `--script`** 快速验证 GDScript 语法
+5. **使用调试标志**（`--debug-collisions`、`--debug-navigation`）在开发期间可视化系统
+6. **检查退出代码** - 非零表示错误（对 CI/CD 脚本有用）
 
-### Example: Pre-commit Hook for GDScript Validation
+### 示例：GDScript 验证的预提交钩子
 
 ```bash
 #!/bin/bash
-# Validate all changed .gd files before committing
+# 在提交前验证所有更改的 .gd 文件
 
 for file in $(git diff --cached --name-only --diff-filter=ACM | grep '\.gd$'); do
     if ! godot --path . --check-only --script "$file" --headless --quit; then
@@ -672,57 +674,57 @@ for file in $(git diff --cached --name-only --diff-filter=ACM | grep '\.gd$'); d
 done
 ```
 
-## Quick Reference
+## 快速参考
 
-### File Type Decision Tree
+### 文件类型决策树
 
-**Writing game logic?** → Use .gd file
+**编写游戏逻辑？** → 使用 .gd 文件
 
-**Storing data (item stats, spell configs)?** → Use .tres file
+**存储数据（物品属性、法术配置）？** → 使用 .tres 文件
 
-**Creating scene structure?** → Use .tscn file (prefer Godot editor for complex structures)
+**创建场景结构？** → 使用 .tscn 文件（复杂结构优先使用 Godot 编辑器）
 
-### Syntax Quick Check
+### 语法快速检查
 
-**In .gd files:** Full GDScript - `var`, `func`, `preload()`, etc. ✅
+**在 .gd 文件中：** 完整的 GDScript - `var`、`func`、`preload()` 等 ✅
 
-**In .tres/.tscn files:**
-- `preload()` ❌ → Use `ExtResource("id")` ✅
-- `var`, `const`, `func` ❌ → Just property values ✅
+**在 .tres/.tscn 文件中：**
+- `preload()` ❌ → 使用 `ExtResource("id")` ✅
+- `var`, `const`, `func` ❌ → 仅使用属性值 ✅
 - `[1, 2, 3]` ❌ → `Array[int]([1, 2, 3])` ✅
 
-### When to Use Each Validation Script
+### 何时使用每个验证脚本
 
-**`validate_tres.py`** - For resource files:
-- Items, spells, abilities
-- Custom resource data
-- After creating .tres files
+**`validate_tres.py`** - 用于资源文件：
+- 物品、法术、能力
+- 自定义资源数据
+- 创建 .tres 文件后
 
-**`validate_tscn.py`** - For scene files:
-- Player, enemies, levels
-- UI scenes
-- After editing .tscn files
+**`validate_tscn.py`** - 用于场景文件：
+- 玩家、敌人、关卡
+- UI 场景
+- 编辑 .tscn 文件后
 
-### When to Read Each Reference
+### 何时阅读每个参考
 
-**`file-formats.md`** - When:
-- Creating/editing .tres/.tscn files
-- Getting "failed to load" errors
-- Unsure about syntax rules
+**`file-formats.md`** - 在以下情况下：
+- 创建/编辑 .tres/.tscn 文件
+- 遇到"加载失败"错误
+- 对语法规则不确定
 
-**`architecture-patterns.md`** - When:
-- Implementing new game systems
-- Planning component structure
-- Looking for proven patterns
+**`architecture-patterns.md`** - 在以下情况下：
+- 实现新的游戏系统
+- 规划组件结构
+- 寻找经过验证的模式
 
-## Summary
+## 总结
 
-Work with Godot projects effectively by:
+通过以下方式有效地处理 Godot 项目：
 
-1. **Understanding file formats** - .gd is code, .tres/.tscn are data with strict syntax
-2. **Using validation tools** - Catch errors before testing
-3. **Following patterns** - Use proven architectures from references
-4. **Starting from templates** - Adapt rather than create from scratch
-5. **Testing incrementally** - Validate, test, commit frequently
+1. **理解文件格式** - .gd 是代码，.tres/.tscn 是具有严格语法的数据
+2. **使用验证工具** - 在测试前捕获错误
+3. **遵循模式** - 使用参考中的经过验证的架构
+4. **从模板开始** - 适配而不是从头开始创建
+5. **增量测试** - 频繁验证、测试、提交
 
-The key insight: Godot's text-based files are LLM-friendly when you respect the syntax differences between GDScript and resource serialization formats.
+关键见解：当您尊重 GDScript 和资源序列化格式之间的语法差异时，Godot 的基于文本的文件对 LLM 友好。

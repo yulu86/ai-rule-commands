@@ -73,7 +73,13 @@ python scripts/auto_commit.py "自定义提交信息"
 
 ### 基本格式
 ```
-<动词><描述性内容>
+<type>: <subject>
+
+# 示例
+feat: 添加用户登录功能
+fix: 修复按钮点击无响应问题
+refactor: 重构用户管理模块
+docs: 更新API文档
 ```
 
 ### 推荐动词

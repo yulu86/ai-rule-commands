@@ -131,7 +131,16 @@ docs: 更新API文档
 - ❌ Co-authored信息
 - ❌ 时间戳和版本号
 - ❌ 无意义的描述（"update"、"fix"）
-- ❌ 工具签名: ```Co-Authored-By: Claude <noreply@anthropic.com>```、```🤖 Generated with [Claude Code](https://claude.com/claude-code)```
+- ❌ 工具签名: ```🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+   Co-Authored-By: Claude <noreply@anthropic.com>
+```
+- ❌ 禁止包含:
+```
+   🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+   Co-Authored-By: Claude <noreply@anthropic.com>
+```
 
 ### 提交信息示例
 ✅ 正确示例：

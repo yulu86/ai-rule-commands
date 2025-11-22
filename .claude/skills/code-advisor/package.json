@@ -1,0 +1,21 @@
+{
+  "name": "code-advisor",
+  "version": "1.0.0",
+  "description": "智能代码助手技能，专门处理代码编写、实现、检视和解释任务",
+  "main": "SKILL.md",
+  "scripts": {
+    "test": "python scripts/code_helper.py"
+  },
+  "keywords": [
+    "code-generation",
+    "code-review",
+    "code-explanation",
+    "multi-model-advisor",
+    "qwen3-coder"
+  ],
+  "author": "Claude Code Skill",
+  "license": "MIT",
+  "dependencies": {
+    "mcp-tools": "latest"
+  }
+}

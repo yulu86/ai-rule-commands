@@ -210,7 +210,8 @@ npm run build
     "multi-model-advisor": {
       "command": "node",
       "args": [
-        "D:/workspace/code/01_AI/multi-ai-advisor-mcp/build/index.js"
+        // "D:/workspace/code/01_AI/multi-ai-advisor-mcp/build/index.js"
+        "/Users/xuyulu/workspace/code/01_AI/multi-ai-advisor-mcp/build/index.js"
       ]
     }
 ```

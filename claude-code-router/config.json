@@ -64,10 +64,10 @@
 		}
 	],
 	"Router": {
-		"default": "glm,glm-4.6",
-		"background": "ollama,qwen3-coder:30b",
-		"think": "deepseek,deepseek-reasoner",
-		"webSearch": "moonshot,kimi-k2-0905-preview",
-		"image": "moonshot,moonshot-v1-8k-vision-preview"
+		"default": "ollama,qwen3-coder:30b"
+		// "background": "ollama,qwen3-coder:30b",
+		// "think": "deepseek,deepseek-reasoner",
+		// "webSearch": "moonshot,kimi-k2-0905-preview",
+		// "image": "moonshot,moonshot-v1-8k-vision-preview"
 	}
 }

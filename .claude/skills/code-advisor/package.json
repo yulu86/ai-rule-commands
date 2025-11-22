@@ -1,7 +1,7 @@
 {
   "name": "code-advisor",
   "version": "1.0.0",
-  "description": "智能代码助手技能，专门处理代码编写、实现、检视和解释任务",
+  "description": "智能代码助手技能，专门处理代码编写、实现、检视和解释任务。智能检测Godot项目并提供针对性的Godot 4.5+特性优化。",
   "main": "SKILL.md",
   "scripts": {
     "test": "python scripts/code_helper.py"
@@ -11,11 +11,32 @@
     "code-review",
     "code-explanation",
     "multi-model-advisor",
-    "qwen3-coder"
+    "qwen3-coder",
+    "godot",
+    "gdscript",
+    "game-development",
+    "intelligent-detection",
+    "mcp-integration"
   ],
   "author": "Claude Code Skill",
   "license": "MIT",
   "dependencies": {
-    "mcp-tools": "latest"
-  }
+    "mcp-tools": "latest",
+    "godot-mcp-server": "latest"
+  },
+  "supportedProjectTypes": [
+    "general",
+    "godot"
+  ],
+  "supportedLanguages": [
+    "python",
+    "javascript",
+    "java",
+    "c++",
+    "c#",
+    "go",
+    "rust",
+    "typescript",
+    "gdscript"
+  ]
 }

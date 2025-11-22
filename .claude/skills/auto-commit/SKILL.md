@@ -128,11 +128,10 @@ docs: 更新API文档
 ## 质量保证
 
 ### 避免的内容
-- ❌ 工具签名信息（如"🤖 Generated with Claude Code"、"Co-Authored-By: Claude <noreply@anthropic.com>"）
 - ❌ Co-authored信息
 - ❌ 时间戳和版本号
 - ❌ 无意义的描述（"update"、"fix"）
-- 禁止出现```Co-Authored-By: Claude <noreply@anthropic.com>```、```🤖 Generated with [Claude Code](https://claude.com/claude-code)```
+- ❌ 工具签名: ```Co-Authored-By: Claude <noreply@anthropic.com>```、```🤖 Generated with [Claude Code](https://claude.com/claude-code)```
 
 ### 提交信息示例
 ✅ 正确示例：

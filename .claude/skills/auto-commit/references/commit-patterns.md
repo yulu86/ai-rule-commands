@@ -101,6 +101,7 @@
 ❌ 包含工具签名：
 - "fix: 修复bug 🤖 Generated with Claude Code"
 - "feat: 添加功能 Co-Authored-By: Claude"
+- "feat: 添加功能 Co-Authored-By: Claude <noreply@anthropic.com> 🤖 Generated with [Claude Code](https://claude.com/claude-code)"
 
 ❌ 包含时间戳：
 - "update config - 2024-01-01"

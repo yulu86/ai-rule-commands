@@ -20,6 +20,8 @@ description: 智能代码解释分析技能，当用户输入"解释代码"、"e
 
 ## 执行流程
 
+使用agent`code-reviewer`执行：
+
 ### 1. 代码获取与识别
 使用Glob、Read或Grep工具获取目标代码：
 - 支持文件路径指定（如："解释 src/components/Button.tsx"）

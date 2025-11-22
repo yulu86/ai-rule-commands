@@ -35,6 +35,8 @@ description: Godot游戏引擎专用代码解释分析技能，当用户在Godot
 
 ## 执行流程
 
+使用agent`godot-code-reviewer`执行：
+
 ### 1. 代码获取与上下文分析
 使用 MCP Godot 工具获取目标代码和项目信息：
 

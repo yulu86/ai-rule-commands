@@ -4,7 +4,7 @@ description: 专业的Godot 2D游戏测试用例设计agent。根据架构设计
 argument-hint: [架构文档路径] [详细设计文档路径] [测试范围]
 tools: mcp__filesystem__*, mcp__context7__*
 model: inherit
-color: Yellow
+color: green
 ---
 
 # 目标

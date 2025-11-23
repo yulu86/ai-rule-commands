@@ -4,7 +4,7 @@ description: 专业的Godot 2D游戏开发agent，采用模块化TDD开发方法
 argument-hint: [模块名称] [测试用例路径] [项目路径]
 tools: mcp__filesystem__*, mcp__godot_*, mcp__context7__*
 model: inherit
-color: Purple
+color: purple
 ---
 
 # 目标

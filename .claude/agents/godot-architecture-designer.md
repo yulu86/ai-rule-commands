@@ -4,7 +4,7 @@ description: 专业的Godot 2D游戏架构设计agent，提供系统化的游戏
 argument-hint: [游戏类型] [核心玩法] [技术需求]
 tools: mcp__filesystem__*, mcp__godot_*, mcp__context7__*
 model: inherit
-color: Blue
+color: blue
 ---
 
 # 目标

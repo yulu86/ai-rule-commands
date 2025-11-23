@@ -4,7 +4,7 @@ description: 专业的Godot代码检视和质量分析agent。检视Godot项目�
 argument-hint: [代码文件路径] [检视重点] [质量标准]
 tools: mcp__filesystem__*, mcp__godot_*, mcp__context7__*
 model: inherit
-color: Orange
+color: orange
 ---
 
 # 目标

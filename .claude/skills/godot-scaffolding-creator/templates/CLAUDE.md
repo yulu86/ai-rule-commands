@@ -3,6 +3,7 @@
 - 用户: 负责.tscn开发
 - AI指导用户处理.tscn/项目配置/.gd中节点引用
 - 测试/调试: 用godot MCP工具运行项目并获取日志
+- 禁止直接使用uid
 
 # godot MCP工具
 - 优先使用godot MCP工具：

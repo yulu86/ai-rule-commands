@@ -1,6 +1,7 @@
 ---
 name: <agent-name>
 description: <agent功能和使用场景描述,用于自动触发agent>
+*可选* argument-hint: [arg1] [arg2] [arg3]
 *可选* tools: tool1, tool2, tool3
 model: inherit
 color: [Red|Blue|Green|Yellow|Purple|Orange|Pink|Cyan]

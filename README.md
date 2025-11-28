@@ -185,9 +185,9 @@ npm -g install @upstash/context7-mcp
 > 提示词中增加 `use context7`
 
 
-### figma-mcp 
+#### figma-mcp 
 ```bash
-claude mcp add --transport http figma https://mcp.figma.com/mcp
+claude mcp add --transport http figma-desktop http://127.0.0.1:3845/mcp
 ```
 
 #### ~~chrome-devtools-mcp~~
@@ -201,6 +201,30 @@ npm -g install chrome-devtools-mcp
       "args": ["-y", "chrome-devtools-mcp@latest"]
     }
 ```
+
+#### excalidraw:
+```bash
+docker pull excalidraw/excalidraw:latest
+docker run -d -p 8090:80 --name excalidraw excalidraw/excalidraw:latest
+
+
+git clone http://gh-proxy.com/https://github.com/yctimlin/mcp_excalidraw.git
+cd mcp_excalidraw
+npm install
+npm run build
+```
+
+```json
+    "excalidraw": {
+      "command": "node",
+      "args": ["/Users/xuyulu/workspace/code/99_Others/mcp_excalidraw/dist/index.js"],
+      "env": {
+        "EXPRESS_SERVER_URL": "http://localhost:3000",
+        "ENABLE_CANVAS_SYNC": "true"
+      }
+    }
+```
+
 
 #### ~~[multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp)~~
 

@@ -205,8 +205,7 @@ npm -g install chrome-devtools-mcp
 #### excalidraw:
 ```bash
 docker pull excalidraw/excalidraw:latest
-docker run -d -p 8090:80 --name excalidraw excalidraw/excalidraw:latest
-
+docker run -d -p 8090:80 --restart=always --name excalidraw excalidraw/excalidraw:latest
 
 git clone http://gh-proxy.com/https://github.com/yctimlin/mcp_excalidraw.git
 cd mcp_excalidraw

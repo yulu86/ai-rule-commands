@@ -207,26 +207,15 @@ npm -g install chrome-devtools-mcp
 docker pull excalidraw/excalidraw:latest
 docker run -d -p 8090:80 --restart=always --name excalidraw excalidraw/excalidraw:latest
 
-docker pull ghcr.io/yctimlin/mcp_excalidraw-canvas:latest
-docker run -d -p 3010:3000 --restart=always --name mcp-excalidraw-canvas ghcr.io/yctimlin/mcp_excalidraw-canvas:latest
-
-git clone http://gh-proxy.com/https://github.com/yctimlin/mcp_excalidraw.git
-cd mcp_excalidraw
-npm install
-npm run build
+npm -g install excalidraw-mcp
 ```
 
 ```json
     "excalidraw": {
-      "command": "node",
-      "args": ["/Users/xuyulu/workspace/code/99_Others/mcp_excalidraw/dist/index.js"],
-      "env": {
-        "EXPRESS_SERVER_URL": "http://127.0.0.1:3010",
-        "ENABLE_CANVAS_SYNC": "true"
-      }
+      "command": "npx",
+      "args": ["-y", "excalidraw-mcp"]
     }
 ```
-
 
 #### ~~[multi-ai-advisor-mcp](https://github.com/YuChenSSR/multi-ai-advisor-mcp)~~
 

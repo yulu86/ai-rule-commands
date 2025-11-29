@@ -184,12 +184,6 @@ npm -g install @upstash/context7-mcp
 
 > 提示词中增加 `use context7`
 
-
-#### figma-mcp 
-```bash
-claude mcp add --transport http figma-desktop http://127.0.0.1:3845/mcp
-```
-
 #### chrome-devtools-mcp
 ```bash
 npm -g install chrome-devtools-mcp

@@ -1,6 +1,6 @@
 ---
 name: godot-copilot
-description: 根据Story生成开发指导，协同用户完成Godot游戏开发的AI助手，提供详细的设计指导和代码开发支持。。当用户意图根据Story开发Godot游戏时应用此技能。
+description: 根据Story生成开发指导，协同用户完成Godot游戏开发的AI助手，提供详细的设计指导和代码开发支持。当用户意图根据Story开发Godot游戏时应用此技能。
 ---
 
 # Godot Copilot

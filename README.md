@@ -231,6 +231,37 @@ npm run build
     }
 ```
 
+### GLM工具(视觉工具、联网搜索、网页读取)
+
+```json
+    "web-search-prime": {
+      "type": "http",
+      "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+      "headers": {
+        "Authorization": "Bearer <API KEY>"
+      }
+    },
+    "web-reader": {
+      "type": "http",
+      "url": "https://open.bigmodel.cn/api/mcp/web_reader/mcp",
+      "headers": {
+        "Authorization": "Bearer <API KEY>"
+      }
+    },
+    "zai-mcp-server": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@z_ai/mcp-server"
+      ],
+      "env": {
+        "Z_AI_API_KEY": "<API KEY>"
+      }
+    }
+```
+
 ### 3.3 增加`skills`
 
 ```bash

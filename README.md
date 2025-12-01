@@ -282,3 +282,13 @@ npm i -g @musistudio/claude-code-router
 ```
 
 配置参考 [claude-code-router/config.json](claude-code-router/config.json)
+
+
+### 3.5 安装`speckit`
+
+```bash
+git clone https://gh-proxy.org/https://github.com/github/spec-kit.git
+
+cd spec-kit
+uv tool install -i https://mirrors.aliyun.com/pypi/simple specify-cli 
+```

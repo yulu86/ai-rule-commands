@@ -68,6 +68,7 @@ vim ~/.claude/settings.json
 mklink "C:\Users\Yulu Xu\.claude\CLAUDE.md" "D:\workspace\code\01_AI\ai-rule-commands\.claude\CLAUDE.md"
 mklink /d "C:\Users\Yulu Xu\.claude\agents" "D:\workspace\code\01_AI\ai-rule-commands\.claude\agents"
 mklink /d "C:\Users\Yulu Xu\.claude\commands" "D:\workspace\code\01_AI\ai-rule-commands\.claude\commands"
+mklink /d "C:\Users\Yulu Xu\.claude\skills" "D:\workspace\code\01_AI\ai-rule-commands\.claude\skills"
 ```
 
 #### mac
@@ -75,6 +76,7 @@ mklink /d "C:\Users\Yulu Xu\.claude\commands" "D:\workspace\code\01_AI\ai-rule-c
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/CLAUDE.md" "/Users/xuyulu/.claude/CLAUDE.md"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/agents" "/Users/xuyulu/.claude/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/commands" "/Users/xuyulu/.claude/commands"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.claude/skills" "/Users/xuyulu/.claude/skills"
 ```
 
 ---

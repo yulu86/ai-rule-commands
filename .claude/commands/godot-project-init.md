@@ -8,28 +8,28 @@ godot项目初始化工具
 ## 执行流程
 1. 如果当前操作系统为mac，执行
 ```bash
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/.claude ./
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/assets ./
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/scenes ./
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/scripts ./
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/addons ./
-cp -r /Users/xuyulu/workspace/code/07_games/GodotScaffolding/test ./
-cp /Users/xuyulu/workspace/code/07_games/GodotScaffolding/.gitignore ./
-cp /Users/xuyulu/workspace/code/07_games/GodotScaffolding/CLAUDE.md ./
-cp /Users/xuyulu/workspace/code/07_games/GodotScaffolding/README.md ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/.claude ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/assets ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/scenes ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/scripts ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/addons ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/test ./
+cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
+cp ~/workspace/code/07_games/GodotScaffolding/CLAUDE.md ./
+cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
 ```
 
 2. 如果当前操作系统为windows，执行
 ```powershell
-robocopy "D:\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /NFL /NDL
-robocopy "D:\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /NFL /NDL
-robocopy "D:\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /NFL /NDL
-robocopy "D:\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /NFL /NDL
-robocopy "D:\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /NFL /NDL
-robocopy "D:\workspace\code\07_games\GodotScaffolding\test" "test" /E /NFL /NDL
-copy "D:\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
-copy "D:\workspace\code\07_games\GodotScaffolding\CLAUDE.md" "CLAUDE.md"
-copy "D:\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
+robocopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /NFL /NDL
+robocopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /NFL /NDL
+robocopy "~\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /NFL /NDL
+robocopy "~\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /NFL /NDL
+robocopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /NFL /NDL
+robocopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /NFL /NDL
+copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
+copy "~\workspace\code\07_games\GodotScaffolding\CLAUDE.md" "CLAUDE.md"
+copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
 ```
 
 注意：

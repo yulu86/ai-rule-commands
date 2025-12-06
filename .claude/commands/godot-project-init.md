@@ -21,18 +21,20 @@ cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
 
 2. 如果当前操作系统为windows，执行
 ```powershell
-robocopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /NFL /NDL
-robocopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /NFL /NDL
-robocopy "~\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /NFL /NDL
-robocopy "~\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /NFL /NDL
-robocopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /NFL /NDL
-robocopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /NFL /NDL
+xcopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /I /H /Y
 copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
 copy "~\workspace\code\07_games\GodotScaffolding\CLAUDE.md" "CLAUDE.md"
 copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
 ```
 
 注意：
-- robocopy 的 `/E` 参数表示复制子目录，包括空的子目录
-- `/NFL` 和 `/NDL` 参数用于减少输出，只显示错误和失败的文件
+- xcopy 的 `/E` 参数表示复制子目录，包括空的子目录
+- `/I` 参数表示如果目标不存在，则创建目录
+- `/H` 参数表示复制隐藏文件和系统文件
+- `/Y` 参数表示覆盖已存在文件时不提示
 - copy 命令用于复制单个文件

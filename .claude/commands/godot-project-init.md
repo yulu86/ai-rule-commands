@@ -12,6 +12,7 @@ cp -r ~/workspace/code/07_games/GodotScaffolding/.claude ./
 cp -r ~/workspace/code/07_games/GodotScaffolding/assets ./
 cp -r ~/workspace/code/07_games/GodotScaffolding/scenes ./
 cp -r ~/workspace/code/07_games/GodotScaffolding/scripts ./
+cp -r ~/workspace/code/07_games/GodotScaffolding/docs ./
 cp -r ~/workspace/code/07_games/GodotScaffolding/addons ./
 cp -r ~/workspace/code/07_games/GodotScaffolding/test ./
 cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
@@ -25,6 +26,7 @@ xcopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /I /H /Y
 xcopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /I /H /Y
 xcopy "~\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /I /H /Y
 xcopy "~\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /I /H /Y
+xcopy "~\workspace\code\07_games\GodotScaffolding\docs" "docs" /E /I /H /Y
 xcopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /I /H /Y
 xcopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /I /H /Y
 copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"

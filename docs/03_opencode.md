@@ -2,15 +2,42 @@
 
 ## 1. 配置连接
 
-#### windows cmd (管理员模式)
+### windows cmd (管理员模式)
 ```bash
 ```
 
-#### mac
+### mac
 ```bash
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/AGENTS.md" "//Users/xuyulu/.config/opencode/AGENTS.md"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/agents" "/Users/xuyulu/.config/opencode/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/Users/xuyulu/.config/opencode/command"
+```
+
+## 2. permissions
+
+位置:  `~/.config/opencode/opencode.json`
+
+```json
+{
+    "permission": {
+        "edit": "ask",
+        "bash": {
+            "git push": "deny",
+            "git status": "allow",
+            "git diff": "allow",
+            "git add": "ask",
+            "git commit": "ask",
+            "git checkout": "ask",
+            "npm run build": "allow",
+            "ls": "allow",
+            "pwd": "allow"
+        },
+        "skill": "ask",
+        "webfetch": "ask",
+        "doom_loop": "ask",
+        "external_directory": "ask"
+    }
+}
 ```
 
 ## 2. MCP 

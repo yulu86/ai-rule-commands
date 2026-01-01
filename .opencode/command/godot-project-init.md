@@ -1,5 +1,5 @@
 ---
-description: godot项目初始化 [update代表更新]
+description: godot项目初始化
 agent: build
 ---
 
@@ -12,7 +12,7 @@ godot项目初始化工具
 
    1. 如果当前操作系统为mac，执行
    ```bash
-   cp -r ~/workspace/code/07_games/GodotScaffolding/.claude ./
+   cp -r ~/workspace/code/07_games/GodotScaffolding/.opencode ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/assets ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/scenes ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/scripts ./
@@ -20,14 +20,14 @@ godot项目初始化工具
    cp -r ~/workspace/code/07_games/GodotScaffolding/addons ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/test ./
    cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
-   cp ~/workspace/code/07_games/GodotScaffolding/.mcp.json ./
-   cp ~/workspace/code/07_games/GodotScaffolding/CLAUDE.md ./
+   cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
+   cp ~/workspace/code/07_games/GodotScaffolding/AGENTS.md ./
    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
    ```
 
    2. 如果当前操作系统为windows，执行
    ```powershell
-   xcopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /I /H /Y
+   xcopy "~\workspace\code\07_games\GodotScaffolding\.opencode" ".opencode" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\scenes" "scenes" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\scripts" "scripts" /E /I /H /Y
@@ -35,21 +35,9 @@ godot项目初始化工具
    xcopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /I /H /Y
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
-   copy "~\workspace\code\07_games\GodotScaffolding\.mcp.json" ".mcp.json"
-   copy "~\workspace\code\07_games\GodotScaffolding\CLAUDE.md" "CLAUDE.md"
+   copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
+   copy "~\workspace\code\07_games\GodotScaffolding\AGENTS.md" "AGENTS.md"
    copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
-   ```
-
-3. 如果 $1 不为空，则执行：
-
-   1. 如果当前操作系统为mac，执行
-   ```bash
-   cp -r ~/workspace/code/07_games/GodotScaffolding/.claude ./
-   ```
-
-   2. 如果当前操作系统为windows，执行
-   ```powershell
-   xcopy "~\workspace\code\07_games\GodotScaffolding\.claude" ".claude" /E /I /H /Y
    ```
 
 注意：

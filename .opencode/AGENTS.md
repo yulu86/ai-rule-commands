@@ -36,3 +36,6 @@ SIMPLICITY. use context7
 在clone或下载`https://github.com`的资源时，使用代理(`https://gh-proxy.org`)以提高下载速度，例如:
 1. ```curl -JLO https://github.com/tillberg/gut/archive/refs/tags/v1.0.3.tar.gz``` 转换成 ```curl -JLO https://gh-proxy.org/https://github.com/tillberg/gut/archive/refs/tags/v1.0.3.tar.gz```
 2. ```uv tool install specify-cli --from git+https://github.com/github/spec-kit.git``` 转换成 ```uv tool install specify-cli --from git+https://gh-proxy.org/https://github.com/github/spec-kit.git```
+
+## git提交
+1. git commit的message内容请使用中文

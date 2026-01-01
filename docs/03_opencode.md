@@ -73,7 +73,7 @@ npm -g install chrome-devtools-mcp
             "command": [
                 "npx",
                 "-y",
-                "tavily-mcp@latest"
+                "tavily-mcp"
             ],
             "environment": {
                 "TAVILY_API_KEY": "{env:TAVILY_API_KEY}"
@@ -95,7 +95,7 @@ npm -g install chrome-devtools-mcp
             "command": [
                 "npx",
                 "-y",
-                "chrome-devtools-mcp@latest"
+                "chrome-devtools-mcp"
             ]
         },
         "web-search-prime": {

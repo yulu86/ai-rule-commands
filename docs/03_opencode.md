@@ -9,6 +9,8 @@
 #### mac
 ```bash
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/AGENTS.md" "//Users/xuyulu/.config/opencode/AGENTS.md"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/agents" "/Users/xuyulu/.config/opencode/agents"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/Users/xuyulu/.config/opencode/command"
 ```
 
 ## 2. MCP 

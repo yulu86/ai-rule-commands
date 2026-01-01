@@ -33,7 +33,8 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/
             "git checkout": "ask",
             "npm run build": "allow",
             "ls": "allow",
-            "pwd": "allow"
+            "pwd": "allow",
+            "rm": "ask"
         },
         "skill": "ask",
         "webfetch": "ask",

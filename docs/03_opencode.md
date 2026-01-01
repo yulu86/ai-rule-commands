@@ -23,7 +23,7 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/
 ```json
 {
     "permission": {
-        "edit": "ask",
+        "edit": "allow",
         "bash": {
             "git push": "deny",
             "git status": "allow",

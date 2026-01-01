@@ -4,6 +4,9 @@
 
 ### windows cmd (管理员模式)
 ```bash
+mklink "C:\Users\Yulu Xu\.config\.opencode\CLAUDE.md" "D:\workspace\code\01_AI\ai-rule-commands\.opencode\AGENTS.md"
+mklink /d "C:\Users\Yulu Xu\.config\.opencode\agents" "D:\workspace\code\01_AI\ai-rule-commands\.opencode\agents"
+mklink /d "C:\Users\Yulu Xu\.config\.opencode\command" "D:\workspace\code\01_AI\ai-rule-commands\.opencode\command"
 ```
 
 ### mac

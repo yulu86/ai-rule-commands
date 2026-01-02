@@ -1,7 +1,6 @@
 ---
 description: Use this agent when you need to create comprehensive, professional technical documentation. 
 mode: subagent
-model: zhipuai/glm-4.7
 temperature: 0.1
 tools:
   write: false

@@ -3,10 +3,6 @@ description: godot项目初始化
 agent: build
 ---
 
-godot项目初始化工具
-
-## 执行流程
-
 1. 如果 $1 为空，则默认为 `init`
 2. 如果 $1 为 `init`，则执行:
 

@@ -44,7 +44,35 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/
 }
 ```
 
-## 2. MCP 
+## 3. Provider
+
+### 配置 ~/.config/opencode/opencode.json
+```json
+    "provider": {
+        "ollama": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "Ollama (local)",
+            "options": {
+                "baseURL": "http://localhost:11434/v1"
+            },
+            "models": {
+                "qwen3:30b": {
+                    "name": "Qwen3 30B (local)"
+                },
+                "qwen3-coder:30b": {
+                    "name": "Qwen3 Coder 30B (local)",
+                    "limit": {
+                        "context": 32768,
+                        "output": 4096
+                    }
+                }
+            }
+        }
+    }
+```
+
+
+## 4. MCP 
 
 ### 安装
 ```bash

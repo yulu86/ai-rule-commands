@@ -37,7 +37,7 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/
             "rm": "ask"
         },
         "skill": "ask",
-        "webfetch": "ask",
+        "webfetch": "allow",
         "doom_loop": "ask",
         "external_directory": "ask"
     }

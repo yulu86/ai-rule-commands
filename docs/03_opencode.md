@@ -71,8 +71,23 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/.opencode/command" "/
     }
 ```
 
+## 4. Plugins
 
-## 4. MCP 
+### opencode-notifier
+
+安装
+```bash
+npm -g install @mohak34/opencode-notifier
+```
+
+配置
+```json
+{
+  "plugin": ["@mohak34/opencode-notifier@latest"]
+}
+```
+
+## 5. MCP 
 
 ### 安装
 ```bash

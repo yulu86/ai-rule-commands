@@ -18,6 +18,7 @@
 			".vscode/**"
 		]
 	},
+	"theme": "github",
 	"permission": {
 		"edit": "allow",
 		"bash": {

@@ -1,21 +1,21 @@
-# 基本设置
+# 规则
+
 - 语言：中文输出
 
-# 规范
-
-## 文件规范
-- 标准化路径和命名
-- 命名：{两位序号}_{中文名称}.md（序号从01自增）
-- 序号规则：目录下已存在文件时从最大序号递增
+## 文件命名
+- 格式：{两位序号}_{中文名称}.md
+- 序号从01递增，最大序号+1
 
 ## 项目分析
-- 分析项目代码目录时忽略 .gitignore中指定的目录和文件
-- 在执行 /init 命令时，同时把项目代码目录用ASCII树形式添加到 AGENTS.md 文件中
+- 分析代码时忽略 .gitignore 指定的目录
+- /init 命令执行时，将代码目录以ASCII树形式添加到AGENTS.md
 
-## github加速
-在clone或下载`https://github.com`的资源时，使用代理(`https://gh-proxy.org`)以提高下载速度，例如:
-1. ```curl -JLO https://github.com/tillberg/gut/archive/refs/tags/v1.0.3.tar.gz``` 转换成 ```curl -JLO https://gh-proxy.org/https://github.com/tillberg/gut/archive/refs/tags/v1.0.3.tar.gz```
-2. ```uv tool install specify-cli --from git+https://github.com/github/spec-kit.git``` 转换成 ```uv tool install specify-cli --from git+https://gh-proxy.org/https://github.com/github/spec-kit.git```
+## GitHub加速
+- 所有 github.com URL 前加 https://gh-proxy.org/
+- git clone 示例：git clone https://gh-proxy.org/https://github.com/user/repo.git
+- uv 示例：uv tool install pkg --from git+https://gh-proxy.org/https://github.com/user/repo.git
 
-## git提交
-1. git commit的message内容请使用中文
+## Git提交
+- commit message 格式：{type}: {description}
+- 类型：feat, fix, perf, refactor, test, docs, config, delete
+- 示例：feat: 添加用户登录功能

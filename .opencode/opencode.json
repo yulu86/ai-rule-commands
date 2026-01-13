@@ -1,81 +1,84 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"enabled_providers": [
-		"zhipuai-coding-plan",
-		"deepseek",
-		"moonshotai-cn",
-		"modelscope"
-	],
-	"model": "zhipuai-coding-plan/glm-4.7",
-	"small_model": "zhipuai-coding-plan/glm-4.5-air",
-	"watcher": {
-		"ignore": [
-			"node_modules/**",
-			"dist/**",
-			".git/**",
-			".idea/**",
-			".godot/**",
-			".vscode/**"
-		]
-	},
-	"theme": "github",
-	"permission": {
-		"edit": "allow",
-		"bash": {
-			"git push": "deny",
-			"git status": "allow",
-			"git diff": "allow",
-			"git add": "ask",
-			"git commit": "ask",
-			"git checkout": "ask",
-			"npm run build": "allow",
-			"ls": "allow",
-			"pwd": "allow",
-			"rm": "ask"
-		},
-		"skill": "ask",
-		"webfetch": "allow",
-		"doom_loop": "ask",
-		"external_directory": "ask"
-	},
-	"mcp": {
-		"sequential-thinking": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"@modelcontextprotocol/server-sequential-thinking"
-			]
-		},
-		"tavily-mcp": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"tavily-mcp"
-			],
-			"environment": {
-				"TAVILY_API_KEY": "{env:TAVILY_API_KEY}"
-			}
-		},
-		"context7": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"@upstash/context7-mcp"
-			],
-			"environment": {
-				"api-key": "{env:CONTEXT7_API_KEY}"
-			}
-		},
-		"chrome-devtools": {
-			"type": "local",
-			"command": [
-				"npx",
-				"-y",
-				"chrome-devtools-mcp"
-			]
-		}
-	}
+    "$schema": "https://opencode.ai/config.json",
+    "enabled_providers": [
+        "zhipuai-coding-plan",
+        "deepseek",
+        "moonshotai-cn",
+        "modelscope"
+    ],
+    "model": "zhipuai-coding-plan/glm-4.7",
+    "small_model": "zhipuai-coding-plan/glm-4.5-air",
+    "watcher": {
+        "ignore": [
+            "node_modules/**",
+            "dist/**",
+            ".git/**",
+            ".idea/**",
+            ".godot/**",
+            ".vscode/**"
+        ]
+    },
+    "theme": "github",
+    "permission": {
+        "edit": "allow",
+        "bash": {
+            "git push": "deny",
+            "git status": "allow",
+            "git diff": "allow",
+            "git add": "ask",
+            "git commit": "ask",
+            "git checkout": "ask",
+            "npm run build": "allow",
+            "ls": "allow",
+            "pwd": "allow",
+            "rm": "ask"
+        },
+        "skill": "ask",
+        "webfetch": "allow",
+        "doom_loop": "ask",
+        "external_directory": "ask"
+    },
+    "mcp": {
+        "sequential-thinking": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "tavily-mcp": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "tavily-mcp"
+            ],
+            "environment": {
+                "TAVILY_API_KEY": "{env:TAVILY_API_KEY}"
+            }
+        },
+        "context7": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "@upstash/context7-mcp"
+            ],
+            "environment": {
+                "api-key": "{env:CONTEXT7_API_KEY}"
+            }
+        },
+        "chrome-devtools": {
+            "type": "local",
+            "command": [
+                "npx",
+                "-y",
+                "chrome-devtools-mcp"
+            ]
+        }
+    },
+    "plugin": [
+        "oh-my-opencode"
+    ]
 }

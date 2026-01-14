@@ -4,7 +4,6 @@
         "zhipuai-coding-plan",
         "deepseek",
         "moonshotai-cn",
-        "modelscope"
     ],
     "model": "zhipuai-coding-plan/glm-4.7",
     "small_model": "zhipuai-coding-plan/glm-4.5-air",

@@ -5,7 +5,7 @@
             "model": "zhipuai-coding-plan/glm-4.7"
         },
         "librarian": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "deepseek/deepseek-chat"
         },
         "explore": {
             "model": "zhipuai-coding-plan/glm-4.7"

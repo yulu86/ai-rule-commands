@@ -22,6 +22,5 @@
         "multimodal-looker": {
             "model": "zhipuai-coding-plan/glm-4.6v"
         }
-    },
-    "disabled_skills": ["playwright"]
+    }
 }

@@ -17,7 +17,7 @@
             ".vscode/**"
         ]
     },
-    "theme": "github",
+    "theme": "aura",
     "permission": {
         "edit": "allow",
         "bash": {

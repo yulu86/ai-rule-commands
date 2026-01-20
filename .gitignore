@@ -233,5 +233,8 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# opencode
+.opencode/
+
 # sisyphus
 .sisyphus/

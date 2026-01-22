@@ -3,7 +3,7 @@
     "enabled_providers": [
         "zhipuai-coding-plan",
         "deepseek",
-        "moonshotai-cn",
+        "moonshotai-cn"
     ],
     "model": "zhipuai-coding-plan/glm-4.7",
     "small_model": "zhipuai-coding-plan/glm-4.5-air",

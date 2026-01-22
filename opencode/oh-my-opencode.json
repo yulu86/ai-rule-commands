@@ -22,5 +22,8 @@
         "multimodal-looker": {
             "model": "zhipuai-coding-plan/glm-4.6v"
         }
+    },
+    "background_task": {
+        "defaultConcurrency": 5
     }
 }

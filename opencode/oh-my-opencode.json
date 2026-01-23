@@ -24,6 +24,6 @@
         }
     },
     "background_task": {
-        "defaultConcurrency": 5
+        "defaultConcurrency": 3
     }
 }

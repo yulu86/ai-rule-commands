@@ -5,7 +5,7 @@
             "model": "zhipuai-coding-plan/glm-4.7"
         },
         "librarian": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "opencode/glm-4.7-free"
         },
         "explore": {
             "model": "zhipuai-coding-plan/glm-4.7"
@@ -14,7 +14,7 @@
             "model": "zhipuai-coding-plan/glm-4.7"
         },
         "frontend-ui-ux-engineer": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "opencode/minimax-m2.1-free"
         },
         "document-writer": {
             "model": "zhipuai-coding-plan/glm-4.5-air"
@@ -24,6 +24,10 @@
         }
     },
     "background_task": {
-        "defaultConcurrency": 3
+        "defaultConcurrency": 3,
+        "providerConcurrency": {
+            "zhipuai-coding-plan": 1,
+            "opencode": 3
+        }
     }
 }

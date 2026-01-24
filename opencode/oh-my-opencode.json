@@ -11,7 +11,7 @@
       "model": "modelscope/QWEN/QWEN3-235B-A22B-INSTRUCT-2507"
     },
     "explore": {
-      "model": "modelscope/QWEN/QWEN3-30B-A3B-INSTRUCT-2507"
+      "model": "modelscope/Qwen/Qwen3-235B-A22B-Thinking-2507"
     },
     "frontend-ui-ux-engineer": {
       "model": "modelscope/ZHIPUAI/glm-4.6"

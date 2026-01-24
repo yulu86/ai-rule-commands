@@ -19,3 +19,6 @@
 - commit message 格式：{type}: {description}
 - 类型：feat, fix, perf, refactor, test, docs, config, delete
 - 示例：feat: 添加用户登录功能
+
+## 设计文档
+- 输出架构设计文档或设计文档时，使用 mermaid 绘制对应的图形

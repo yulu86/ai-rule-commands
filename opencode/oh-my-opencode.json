@@ -4,17 +4,17 @@
     "sisyphus": {
       "model": "zhipuai-coding-plan/glm-4.7"
     },
-    "librarian": {
-      "model": "modelscope/Qwen/Qwen3-235B-A22B-Thinking-2507"
-    },
-    "explore": {
-      "model": "zhipuai-coding-plan/glm-4.7"
-    },
     "oracle": {
       "model": "zhipuai-coding-plan/glm-4.7"
     },
+    "librarian": {
+      "model": "modelscope/QWEN/QWEN3-235B-A22B-INSTRUCT-2507"
+    },
+    "explore": {
+      "model": "modelscope/QWEN/QWEN3-30B-A3B-INSTRUCT-2507"
+    },
     "frontend-ui-ux-engineer": {
-      "model": "modelscope/ZhipuAI/GLM-4.6"
+      "model": "modelscope/ZHIPUAI/glm-4.6"
     },
     "document-writer": {
       "model": "zhipuai-coding-plan/glm-4.5-air"
@@ -24,10 +24,10 @@
     }
   },
   "background_task": {
-    "defaultConcurrency": 3,
+    "defaultConcurrency": 5,
     "providerConcurrency": {
-      "zhipuai-coding-plan": 1,
-      "modelscope": 1
+      "zhipuai-coding-plan": 2,
+      "modelscope": 2
     }
   }
 }

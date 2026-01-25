@@ -26,7 +26,7 @@
   "background_task": {
     "defaultConcurrency": 5,
     "providerConcurrency": {
-      "zhipuai-coding-plan": 2,
+      "zhipuai-coding-plan": 3,
       "modelscope": 2
     }
   }

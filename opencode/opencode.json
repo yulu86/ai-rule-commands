@@ -95,6 +95,15 @@
         "-y",
         "chrome-devtools-mcp"
       ]
+    },
+    "pencil": {
+      "command": [
+        "{env:VSCODE_EXTENSIONS}/highagency.pencildev-0.6.20/out/mcp-server-darwin-arm64",
+        "--ws-port",
+        "54556"
+      ],
+      "enabled": true,
+      "type": "local"
     }
   },
   "plugin": [

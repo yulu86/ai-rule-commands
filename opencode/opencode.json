@@ -95,19 +95,9 @@
         "-y",
         "chrome-devtools-mcp"
       ]
-    },
-    "pencil": {
-      "command": [
-        "/Users/xuyulu/.vscode/extensions/highagency.pencildev-0.6.20/out/mcp-server-darwin-arm64",
-        "--ws-port",
-        "50991"
-      ],
-      "enabled": true,
-      "type": "local"
     }
   },
   "plugin": [
-    "oh-my-opencode",
-    "opencode-pencil-sync"
+    "oh-my-opencode"
   ]
 }

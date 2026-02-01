@@ -8,7 +8,7 @@
             "model": "zhipuai-coding-plan/glm-4.7"
         },
         "librarian": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "opencode/kimi-k2.5-free"
         },
         "explore": {
             "model": "zhipuai-coding-plan/glm-4.7"
@@ -23,10 +23,10 @@
             "model": "zhipuai-coding-plan/glm-4.7"
         },
         "momus": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "opencode/glm-4.7-free"
         },
         "atlas": {
-            "model": "zhipuai-coding-plan/glm-4.7"
+            "model": "opencode/glm-4.7-free"
         },
         "frontend-ui-ux-engineer": {
             "model": "zhipuai-coding-plan/glm-4.7"
@@ -36,11 +36,6 @@
         }
     },
     "background_task": {
-        "defaultConcurrency": 10,
-        "modelConcurrency": {
-            "zhipuai-coding-plan/glm-4.7": 5,
-            "zhipuai-coding-plan/glm-4.6v": 10,
-            "zhipuai-coding-plan/glm-4.5-air": 5
-        }
+        "defaultConcurrency": 10
     }
 }

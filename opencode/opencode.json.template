@@ -58,6 +58,13 @@
     "external_directory": "ask"
   },
   "mcp": {
+    "time": {
+        "type": "local",
+        "command": [
+            "uvx",
+            "mcp-server-time"
+        ]
+    },
     "sequential-thinking": {
       "type": "local",
       "command": [

@@ -63,7 +63,8 @@
         "command": [
             "uvx",
             "mcp-server-time"
-        ]
+        ],
+        "enabled": false
     },
     "sequential-thinking": {
       "type": "local",

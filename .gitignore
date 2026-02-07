@@ -238,6 +238,3 @@ __marimo__/
 
 # sisyphus
 .sisyphus/
-
-# opencode config
-opencode/opencode.json

@@ -59,12 +59,12 @@
   },
   "mcp": {
     "time": {
-        "type": "local",
-        "command": [
-            "uvx",
-            "mcp-server-time"
-        ],
-        "enabled": false
+      "type": "local",
+      "command": [
+        "uvx",
+        "mcp-server-time"
+      ],
+      "enabled": false
     },
     "sequential-thinking": {
       "type": "local",
@@ -107,6 +107,5 @@
   },
   "plugin": [
     "oh-my-opencode",
-    "opencode-pencil-sync"
   ]
 }

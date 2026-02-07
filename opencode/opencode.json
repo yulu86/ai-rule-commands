@@ -41,6 +41,7 @@
     "read": "allow",
     "edit": "allow",
     "bash": {
+      "echo": "deny",
       "git push": "deny",
       "git status": "allow",
       "git diff": "allow",

@@ -15,6 +15,7 @@ mklink "C:\Users\Yulu Xu\.config\opencode\oh-my-opencode.json" "D:\workspace\cod
 mklink "C:\Users\Yulu Xu\.config\opencode\opencode.jsonc" "D:\workspace\code\01_AI\ai-rule-commands\opencode\opencode.json"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\agents" "D:\workspace\code\01_AI\ai-rule-commands\opencode\agents"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\command" "D:\workspace\code\01_AI\ai-rule-commands\opencode\command"
+mklink /d "C:\Users\Yulu Xu\.config\opencode\skills" "D:\workspace\code\01_AI\ai-rule-commands\opencode\skills"
 ```
 
 ### mac
@@ -24,5 +25,6 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/oh-my-openco
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/opencode.json" "/Users/xuyulu/.config/opencode/opencode.json"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/agents" "/Users/xuyulu/.config/opencode/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/command" "/Users/xuyulu/.config/opencode/command"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/skills" "/Users/xuyulu/.config/opencode/skills"
 ```
 

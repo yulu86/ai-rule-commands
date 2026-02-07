@@ -16,8 +16,7 @@ agent: build
    cp -r ~/workspace/code/07_games/GodotScaffolding/addons ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/test ./
    cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
-   cp ~/workspace/code/07_games/GodotScaffolding/opencode.json.template ./
-   cp ~/workspace/code/07_games/GodotScaffolding/opencode.json.template ./opencode.json
+   cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
    cp ~/workspace/code/07_games/GodotScaffolding/CONTRIBUTING.md ./
    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
    ```
@@ -32,8 +31,7 @@ agent: build
    xcopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /I /H /Y
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
-   copy "~\workspace\code\07_games\GodotScaffolding\opencode.json.template" "opencode.json.template"
-   copy "~\workspace\code\07_games\GodotScaffolding\opencode.json.template" "opencode.json"
+   copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
    copy "~\workspace\code\07_games\GodotScaffolding\CONTRIBUTING.md" "CONTRIBUTING.md"
    copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
    ```

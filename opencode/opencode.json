@@ -7,7 +7,7 @@
     "moonshotai-cn",
     "modelscope"
   ],
-  "model": "zhipuai-coding-plan/glm-4.7",
+  "model": "zhipuai-coding-plan/glm-5",
   "small_model": "zhipuai-coding-plan/glm-4.5-air",
   "provider": {
     "ollama": {

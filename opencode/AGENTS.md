@@ -22,3 +22,15 @@
 
 ## 设计文档
 - 输出架构设计文档或设计文档时，使用 mermaid 绘制对应的图形
+
+## 图片理解
+- 优先使用 zai-mcp-server 工具理解图片内容
+- 可用工具：
+  - `zai-mcp-server_ui_to_artifact`：UI截图转代码/设计规范
+  - `zai-mcp-server_extract_text_from_screenshot`：从截图中提取文字
+  - `zai-mcp-server_diagnose_error_screenshot`：分析错误截图
+  - `zai-mcp-server_understand_technical_diagram`：理解技术架构图
+  - `zai-mcp-server_analyze_data_visualization`：分析数据可视化图表
+  - `zai-mcp-server_ui_diff_check`：对比UI差异
+  - `zai-mcp-server_analyze_image`：通用图片分析
+  - `zai-mcp-server_analyze_video`：视频内容分析

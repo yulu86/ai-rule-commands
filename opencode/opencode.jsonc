@@ -17,8 +17,8 @@
                 "baseURL": "http://localhost:11434/v1"
             },
             "models": {
-                "glm-4.7-flash:latest": {
-                    "name": "GLM-4.7-flash"
+                "qwen3.5:27b": {
+                    "name": "qwen3.5:27b"
                 },
                 "qwen2.5:7b": {
                     "name": "Qwen-2.5-7b"

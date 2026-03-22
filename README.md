@@ -26,3 +26,14 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/opencode.jso
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/agents" "/Users/xuyulu/.config/opencode/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/command" "/Users/xuyulu/.config/opencode/command"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/skills" "/Users/xuyulu/.config/opencode/skills"
+```
+
+### linux
+```bash
+ln -s "~/workspace/ai-rule-commands/opencode/AGENTS.md" "~/.config/opencode/AGENTS.md"
+ln -s "~/workspace/ai-rule-commands/opencode/oh-my-opencode.jsonc" "~/.config/opencode/oh-my-opencode.jsonc"
+ln -s "~/workspace/ai-rule-commands/opencode/opencode.jsonc" "~/.config/opencode/opencode.jsonc"
+ln -s "~/workspace/ai-rule-commands/opencode/agents" "~/.config/opencode/agents"
+ln -s "~/workspace/ai-rule-commands/opencode/command" "~/.config/opencode/command"
+ln -s "~/workspace/ai-rule-commands/opencode/skills" "~/.config/opencode/skills"
+```

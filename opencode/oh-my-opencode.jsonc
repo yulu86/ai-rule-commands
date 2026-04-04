@@ -17,13 +17,13 @@
         // 职责: 多仓库分析、文档查找、开源实现示例搜索（只读）
         // 推荐模型: zai-coding-plan/glm-5.1
         "librarian": {
-            "model": "zhipuai-coding-plan/glm-5.1"
+            "model": "zhipuai-coding-plan/glm-5-turbo"
         },
         // Explore - 快速代码探索者
         // 职责: 快速代码库探索、上下文 grep、代码模式搜索（只读）
         // 推荐模型: anthropic/claude-haiku-4-5
         "explore": {
-            "model": "zhipuai-coding-plan/glm-4.5-air"
+            "model": "zhipuai-coding-plan/glm-5.1"
         },
         // Multimodal-Looker - 多媒体分析师
         // 职责: 分析 PDF、图片、图表等视觉内容（仅 read）
@@ -59,13 +59,13 @@
         // 职责: 前端开发、UI/UX 设计、样式、动画
         // 推荐模型: google/gemini-3-pro
         "frontend-ui-ux-engineer": {
-            "model": "zhipuai-coding-plan/glm-5.1"
+            "model": "zhipuai-coding-plan/glm-4.6v"
         },
         // Document-Writer - 文档撰写者
         // 职责: 文档撰写、技术写作、说明文档
         // 推荐模型: google/gemini-3-flash
         "document-writer": {
-            "model": "zhipuai-coding-plan/glm-4.5-air"
+            "model": "zhipuai-coding-plan/glm-5-turbo"
         }
     },
     // Background Task Configuration - 后台任务配置

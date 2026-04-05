@@ -4,6 +4,7 @@
 - 语言：中文输出，**包括思考过程**
 - 优先使用 `CLI` 命令和 `Skill` 完成任务，避免手写已封装的逻辑
 - 当 CLI 或 Skill 已提供某项能力时，禁止绕过它们直接调用底层 API 或手动实现
+- 操作`ComfyUI`时**必须**使用`CLI`
 
 ## 文件命名
 - 格式：{两位序号}_{中文名称}.md
@@ -40,5 +41,4 @@
 
 ## ComfyUI参考
 - 使用`ComfyUI`生成图片，可参考[github](https://github.com/yulu86/ComfyUI/tree/br_20250726/my-workflows/00.Flux/01.%E8%87%AA%E5%AE%9A%E4%B9%89)下的workflow
-- 操作`ComfyUI`时必须使用`CLI`
  

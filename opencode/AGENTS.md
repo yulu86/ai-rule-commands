@@ -37,3 +37,6 @@
   - `zai-mcp-server_ui_diff_check`：对比UI差异
   - `zai-mcp-server_analyze_image`：通用图片分析
   - `zai-mcp-server_analyze_video`：视频内容分析
+
+## ComfyUI参考
+- 使用`ComfyUI`生成图片，可参考[github](https://github.com/yulu86/ComfyUI/tree/br_20250726/my-workflows/00.Flux/01.%E8%87%AA%E5%AE%9A%E4%B9%89)下的workflow

@@ -40,3 +40,5 @@
 
 ## ComfyUI参考
 - 使用`ComfyUI`生成图片，可参考[github](https://github.com/yulu86/ComfyUI/tree/br_20250726/my-workflows/00.Flux/01.%E8%87%AA%E5%AE%9A%E4%B9%89)下的workflow
+- 操作`ComfyUI`时必须使用`CLI`
+ 

@@ -116,14 +116,6 @@
                 "Z_AI_API_KEY": "{env:ZHIPU_API_KEY}",
                 "Z_AI_MODE": "ZHIPU"
             }
-        },
-        // 开源仓库读取
-        "zread": {
-            "type": "remote",
-            "url": "https://open.bigmodel.cn/api/mcp/zread/mcp",
-            "headers": {
-                "Authorization": "Bearer {env:ZHIPU_API_KEY}"
-            }
         }
     },
     "plugin": [

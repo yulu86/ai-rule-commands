@@ -25,6 +25,10 @@
                 },
                 "qwen3-vl:8b": {
                     "name": "qwen3-vl:8b"
+                },
+                // 多模态
+                "gemma4:26b": {
+                    "name": "gemma4:26b"
                 }
             }
         }

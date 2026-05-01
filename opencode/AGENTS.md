@@ -48,3 +48,5 @@
  ## Ollama参考
  - `Ollama`访问地址: http://localhost:11434
  
+## 环境变量
+- 优先从 `.env` 中读取环境变量

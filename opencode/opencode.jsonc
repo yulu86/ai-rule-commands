@@ -126,6 +126,7 @@
         }
     },
     "plugin": [
-        "oh-my-openagent"
+        "oh-my-openagent",
+        "superpowers@git+https://gh-proxy.org/https://github.com/obra/superpowers.git"
     ]
 }

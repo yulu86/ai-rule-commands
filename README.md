@@ -12,7 +12,7 @@ npx oh-my-opencode install
 ```bash
 mklink "C:\Users\Yulu Xu\.config\opencode\AGENTS.md" "D:\workspace\code\01_AI\ai-rule-commands\opencode\AGENTS.md"
 mklink "C:\Users\Yulu Xu\.config\opencode\oh-my-openagent.json" "D:\workspace\code\01_AI\ai-rule-commands\opencode\oh-my-openagent.json"
-mklink "C:\Users\Yulu Xu\.config\opencode\opencode.jsonc" "D:\workspace\code\01_AI\ai-rule-commands\opencode\opencode.jsonc"
+mklink "C:\Users\Yulu Xu\.config\opencode\opencode.json" "D:\workspace\code\01_AI\ai-rule-commands\opencode\opencode.jsonc"
 mklink "C:\Users\Yulu Xu\.config\opencode\tui.json" "D:\workspace\code\01_AI\ai-rule-commands\opencode\tui.json"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\agents" "D:\workspace\code\01_AI\ai-rule-commands\opencode\agents"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\command" "D:\workspace\code\01_AI\ai-rule-commands\opencode\command"
@@ -23,7 +23,7 @@ mklink /d "C:\Users\Yulu Xu\.config\opencode\skills" "D:\workspace\code\01_AI\ai
 ```bash
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/AGENTS.md" "/Users/xuyulu/.config/opencode/AGENTS.md"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/oh-my-openagent.json" "/Users/xuyulu/.config/opencode/oh-my-openagent.json"
-ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/opencode.jsonc" "/Users/xuyulu/.config/opencode/opencode.jsonc"
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/opencode.jsonc" "/Users/xuyulu/.config/opencode/opencode.json"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/tui.json" "/Users/xuyulu/.config/opencode/tui.json"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/agents" "/Users/xuyulu/.config/opencode/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/command" "/Users/xuyulu/.config/opencode/command"

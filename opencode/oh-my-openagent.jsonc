@@ -1,5 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+
+  // 后台任务并行度配置
+  "background_task": {
+    "defaultConcurrency": 3
+  },
+
   "agents": {
 
     // ==================== 高级编排层（High-IQ 模型） ====================
@@ -86,6 +92,16 @@
     // 适用场景：从文档中提取信息、图片内容描述、非精确文本提取的快速摘要
     "multimodal-looker": {
       "model": "zhipuai-coding-plan/glm-4.6v"
+    }
+  },
+
+  // ==================== Category 模型覆盖 ====================
+  // 覆盖各 category 的默认模型，使用智谱可用模型替代
+  "categories": {
+    // 创造性复杂问题解决 — 需要高智能+审美能力
+    "artistry": {
+      "model": "zhipuai-coding-plan/glm-5.1",
+      "temperature": 0.9
     }
   }
 }

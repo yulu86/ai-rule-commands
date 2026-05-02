@@ -120,6 +120,7 @@
         }
     },
     "plugin": [
+        "opencode-pencil-sync",
         "oh-my-openagent"
     ]
 }

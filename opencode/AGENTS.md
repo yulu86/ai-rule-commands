@@ -21,9 +21,8 @@
 - /init 命令执行时，将代码目录以ASCII树形式添加到AGENTS.md
 
 ## GitHub加速
-- 所有 github.com URL 前加 https://gh-proxy.org/
+- 所有 `git clone` 的 `github.com` URL 前加 `https://gh-proxy.org/`
 - git clone 示例：git clone https://gh-proxy.org/https://github.com/user/repo.git
-- uv 示例：uv tool install pkg --from git+https://gh-proxy.org/https://github.com/user/repo.git
 
 ## Git提交
 - commit message 格式：{type}: {description}

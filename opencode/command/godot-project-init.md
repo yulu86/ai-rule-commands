@@ -18,10 +18,11 @@ agent: build
    cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
    cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
    cp ~/workspace/code/07_games/GodotScaffolding/CONTRIBUTING.md ./
-   cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
-   ```
+    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
+    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
+    ```
 
-   2. 如果当前操作系统为windows，执行
+    2. 如果当前操作系统为windows，执行
    ```powershell
    xcopy "~\workspace\code\07_games\GodotScaffolding\.opencode" ".opencode" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\assets" "assets" /E /I /H /Y
@@ -33,8 +34,10 @@ agent: build
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
    copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
    copy "~\workspace\code\07_games\GodotScaffolding\CONTRIBUTING.md" "CONTRIBUTING.md"
-   copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
-   ```
+    copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
+    $projectName = Split-Path -Leaf (Get-Location)
+    (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
+    ```
 
 注意：
 - xcopy 的 `/E` 参数表示复制子目录，包括空的子目录

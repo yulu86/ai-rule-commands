@@ -45,7 +45,14 @@
   - `zai-mcp-server_analyze_video`：视频内容分析
 
  ## Ollama参考
- - `Ollama`访问地址: http://localhost:11434
+  - `Ollama`访问地址: http://localhost:11434
  
+## 通知方式
+- AI 通知用户时，**优先**使用飞书（Lark）发送消息
+- 飞书应用凭证从环境变量获取：
+  - `FEISHU_APP_ID`：飞书应用 ID
+  - `FEISHU_APP_SECRET`：飞书应用 Secret
+- 使用 `lark-im` Skill 发送消息
+
 ## 环境变量
 - 优先从 `.env` 中读取环境变量

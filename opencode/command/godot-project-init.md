@@ -20,8 +20,12 @@ agent: build
    cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
    cp ~/workspace/code/07_games/GodotScaffolding/CONSTITUTION.md ./
    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
-   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
-   ```
+    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
+    cp ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
+    ```
+
+    3. 拷贝完成后，提醒用户：
+    > ⚠️ 已自动从 `.env.example` 生成 `.env` 文件，请根据项目需要填写其中的配置项。
 
     2. 如果当前操作系统为windows，执行
    ```powershell
@@ -37,9 +41,13 @@ agent: build
    copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
    copy "~\workspace\code\07_games\GodotScaffolding\CONSTITUTION.md" "CONSTITUTION.md"
     copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
-    $projectName = Split-Path -Leaf (Get-Location)
-    (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
-    ```
+     $projectName = Split-Path -Leaf (Get-Location)
+     (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
+     copy "~\workspace\code\07_games\GodotScaffolding\.env.example" ".env"
+     ```
+
+    3. 拷贝完成后，提醒用户：
+    > ⚠️ 已自动从 `.env.example` 生成 `.env` 文件，请根据项目需要填写其中的配置项。
 
 注意：
 - xcopy 的 `/E` 参数表示复制子目录，包括空的子目录

@@ -15,12 +15,13 @@ agent: build
    cp -r ~/workspace/code/07_games/GodotScaffolding/docs ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/addons ./
    cp -r ~/workspace/code/07_games/GodotScaffolding/test ./
+   cp -r ~/workspace/code/07_games/GodotScaffolding/constitutions ./
    cp ~/workspace/code/07_games/GodotScaffolding/.gitignore ./
    cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
-   cp ~/workspace/code/07_games/GodotScaffolding/CONTRIBUTING.md ./
-    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
-    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
-    ```
+   cp ~/workspace/code/07_games/GodotScaffolding/CONSTITUTION.md ./
+   cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
+   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
+   ```
 
     2. 如果当前操作系统为windows，执行
    ```powershell
@@ -31,9 +32,10 @@ agent: build
    xcopy "~\workspace\code\07_games\GodotScaffolding\docs" "docs" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\addons" "addons" /E /I /H /Y
    xcopy "~\workspace\code\07_games\GodotScaffolding\test" "test" /E /I /H /Y
+   xcopy "~\workspace\code\07_games\GodotScaffolding\constitutions" "constitutions" /E /I /H /Y   
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
    copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
-   copy "~\workspace\code\07_games\GodotScaffolding\CONTRIBUTING.md" "CONTRIBUTING.md"
+   copy "~\workspace\code\07_games\GodotScaffolding\CONSTITUTION.md" "CONSTITUTION.md"
     copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
     $projectName = Split-Path -Leaf (Get-Location)
     (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline

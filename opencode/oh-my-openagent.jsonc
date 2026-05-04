@@ -2,8 +2,15 @@
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
 
   // 后台任务并行度配置
+  // https://bigmodel.cn/usercenter/proj-mgmt/rate-limits
   "background_task": {
-    "defaultConcurrency": 3
+    "defaultConcurrency": 10,
+    "modelConcurrency": {
+      "zhipuai-coding-plan/glm-5.1": 10,
+      "zhipuai-coding-plan/glm-5-turbo": 1,
+      "zhipuai-coding-plan/glm-4.5-air": 5,
+      "zhipuai-coding-plan/glm-4.6v": 10
+    }
   },
 
   "agents": {

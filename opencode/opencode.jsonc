@@ -7,8 +7,8 @@
         "moonshotai-cn",
         "modelscope"
     ],
-    "model": "zhipuai-coding-plan/glm-5.1",
-    "small_model": "zhipuai-coding-plan/glm-4.5-air",
+    "model": "ollama/qwen3.6:35b",
+    "small_model": "ollama/qwen3.6:27b",
     "provider": {
         "ollama": {
             "npm": "@ai-sdk/openai-compatible",
@@ -19,6 +19,9 @@
             "models": {
                 "qwen3.6:27b": {
                     "name": "qwen3.6:27b"
+                },
+                "qwen3.6:35b": {
+                    "name": "qwen3.6:35b"
                 },
                 // 多模态
                 "gemma4:26b": {

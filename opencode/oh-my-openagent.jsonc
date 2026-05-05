@@ -4,112 +4,13 @@
   // 后台任务并行度配置
   // https://bigmodel.cn/usercenter/proj-mgmt/rate-limits
   "background_task": {
-    "defaultConcurrency": 10,
+    "defaultConcurrency": 1,
     "modelConcurrency": {
       "zhipuai-coding-plan/glm-5.1": 10,
       "zhipuai-coding-plan/glm-5": 2,
       "zhipuai-coding-plan/glm-5-turbo": 1,
       "zhipuai-coding-plan/glm-4.5-air": 5,
       "zhipuai-coding-plan/glm-4.6v": 10
-    }
-  },
-
-  "agents": {
-
-    // ==================== 高级编排层（High-IQ 模型） ====================
-
-    // 主编排 Agent — 任务分解、委派调度、质量控制，不直接实现代码
-    // 适用场景：所有任务的入口，负责理解意图、制定策略、委派子任务
-    "sisyphus": {
-      "model": "zhipuai-coding-plan/glm-5.1"
-    },
-
-    // 只读高 IQ 顾问 — 调试、架构决策、多系统权衡
-    // 适用场景：2+ 次修复失败后咨询、复杂架构设计、安全/性能审查、显著工作完成后的自审
-    "oracle": {
-      "model": "zhipuai-coding-plan/glm-5.1"
-    },
-
-    // 计划 Agent — 生成结构化工作分解方案
-    // 适用场景：多步骤任务的预规划，输出可并行执行的原子工作单元
-    "prometheus": {
-      "model": "zhipuai-coding-plan/glm-5.1"
-    },
-
-    // 预规划顾问 — 分析请求中的隐藏意图、歧义和 AI 失败点
-    // 适用场景：复杂任务的范围内确认、需求澄清、歧义识别
-    "metis": {
-      "model": "zhipuai-coding-plan/glm-5.1"
-    },
-
-    // 专家评审 — 评估工作计划的清晰性、可验证性和完整性
-    // 适用场景：工作计划审查、质量保证、发现缺口和遗漏上下文
-    "momus": {
-      "model": "zhipuai-coding-plan/glm-5.1"
-    },
-
-    // ==================== 执行层（通用模型） ====================
-
-    // 聚焦任务执行器 — 由 sisyphus 通过 task(category=...) 派遣
-    // 适用场景：被 sisyphus 委派执行具体的原子子任务，如单文件修改、功能实现
-    "sisyphus-junior": {
-      "model": "zhipuai-coding-plan/glm-5"
-    },
-
-    // 默认构建 Agent — 基于配置权限执行工具
-    // 适用场景：opencode 默认交互模式下的通用代码构建和工具执行
-    "build": {
-      "model": "zhipuai-coding-plan/glm-5"
-    },
-
-    // 计划模式 Agent — 禁用所有编辑工具，只做分析规划
-    // 适用场景：需要纯分析输出而不产生任何文件修改的规划场景
-    "plan": {
-      "model": "zhipuai-coding-plan/glm-5"
-    },
-
-    // OpenCode 构建器 — OpenCode 项目的专用构建 Agent
-    // 适用场景：OpenCode 插件/扩展的构建与开发
-    "OpenCode-Builder": {
-      "model": "zhipuai-coding-plan/glm-5"
-    },
-
-    // Atlas Agent — 知识图谱与上下文管理
-    // 适用场景：项目知识库的索引、检索和上下文注入
-    "atlas": {
-      "model": "zhipuai-coding-plan/glm-5-turbo"
-    },
-
-    // ==================== 搜索层（轻量模型） ====================
-
-    // 专业代码库理解 Agent — 多仓库分析、远程代码搜索、官方文档检索
-    // 适用场景：查找外部库用法、检索官方 API 文档、搜索 GitHub 开源实现示例
-    "librarian": {
-      "model": "zhipuai-coding-plan/glm-4.5-air"
-    },
-
-    // 上下文 grep — 代码库内部的模式搜索与定位
-    // 适用场景：查找"X 在哪"、"哪个文件包含 Y"、"找到执行 Z 的代码"
-    "explore": {
-      "model": "zhipuai-coding-plan/glm-4.5-air"
-    },
-
-    // ==================== 多模态层（视觉模型） ====================
-
-    // 多模态分析 — 处理 PDF、图片、图表等非文本媒体文件
-    // 适用场景：从文档中提取信息、图片内容描述、非精确文本提取的快速摘要
-    "multimodal-looker": {
-      "model": "zhipuai-coding-plan/glm-4.6v"
-    }
-  },
-
-  // ==================== Category 模型覆盖 ====================
-  // 覆盖各 category 的默认模型，使用智谱可用模型替代
-  "categories": {
-    // 创造性复杂问题解决 — 需要高智能+审美能力
-    "artistry": {
-      "model": "zhipuai-coding-plan/glm-5.1",
-      "temperature": 0.9
     }
   }
 }

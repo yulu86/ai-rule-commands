@@ -7,6 +7,7 @@
     "defaultConcurrency": 10,
     "modelConcurrency": {
       "zhipuai-coding-plan/glm-5.1": 10,
+      "zhipuai-coding-plan/glm-5": 2,
       "zhipuai-coding-plan/glm-5-turbo": 1,
       "zhipuai-coding-plan/glm-4.5-air": 5,
       "zhipuai-coding-plan/glm-4.6v": 10
@@ -52,25 +53,25 @@
     // 聚焦任务执行器 — 由 sisyphus 通过 task(category=...) 派遣
     // 适用场景：被 sisyphus 委派执行具体的原子子任务，如单文件修改、功能实现
     "sisyphus-junior": {
-      "model": "zhipuai-coding-plan/glm-5.1"
+      "model": "zhipuai-coding-plan/glm-5"
     },
 
     // 默认构建 Agent — 基于配置权限执行工具
     // 适用场景：opencode 默认交互模式下的通用代码构建和工具执行
     "build": {
-      "model": "zhipuai-coding-plan/glm-5.1"
+      "model": "zhipuai-coding-plan/glm-5"
     },
 
     // 计划模式 Agent — 禁用所有编辑工具，只做分析规划
     // 适用场景：需要纯分析输出而不产生任何文件修改的规划场景
     "plan": {
-      "model": "zhipuai-coding-plan/glm-5.1"
+      "model": "zhipuai-coding-plan/glm-5"
     },
 
     // OpenCode 构建器 — OpenCode 项目的专用构建 Agent
     // 适用场景：OpenCode 插件/扩展的构建与开发
     "OpenCode-Builder": {
-      "model": "zhipuai-coding-plan/glm-5-turbo"
+      "model": "zhipuai-coding-plan/glm-5"
     },
 
     // Atlas Agent — 知识图谱与上下文管理

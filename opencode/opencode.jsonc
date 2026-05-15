@@ -121,8 +121,6 @@
     },
     "plugin": [
         "opencode-pencil-sync",
-        "superpowers@git+https://github.com/obra/superpowers.git",
-        "oh-my-openagent"
-        
+        "superpowers@git+https://github.com/obra/superpowers.git"        
     ]
 }

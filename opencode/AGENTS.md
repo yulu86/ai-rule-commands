@@ -114,6 +114,10 @@
 | `skill-creator` | 创建或更新 Skill 时使用 |
 | `skill-vetter` | 安装任何第三方 Skill 之前**必须使用** |
 | `mcp-builder` | 构建 MCP 服务器时使用 |
+| `caveman` | 超压缩通信模式，减少 ~75% token 用量，当用户要求简短输出时使用 |
+| `grill-me` | 对计划或设计进行压力测试，反复追问直到达成共识 |
+| `handoff` | 将当前对话压缩为交接文档，供其他代理接续工作 |
+| `write-a-skill` | 创建新的 agent skill，包含结构、渐进披露和捆绑资源 |
 
 ### 5.5 工具映射（OpenCode 环境）
 

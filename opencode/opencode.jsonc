@@ -4,8 +4,7 @@
         "ollama",
         "zhipuai-coding-plan",
         "deepseek",
-        "moonshotai-cn",
-        "modelscope"
+        "opencode"
     ],
     "model": "zhipuai-coding-plan/glm-5.1",
     "small_model": "zhipuai-coding-plan/glm-4.5-air",

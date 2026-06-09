@@ -53,6 +53,10 @@
 ### 3.3 输出规范
 - 输出架构设计文档或设计文档时，使用 mermaid 绘制对应的图形
 
+### 3.4 图形输出格式
+- **TUI（终端界面）**：**必须**使用 ASCII 字符绘制图形，确保在纯文本环境下可读
+- **Markdown 文件**：**必须**使用 Mermaid 语法绘制图形，确保标准化渲染
+
 ## 第四章 Git 规范
 
 ### 4.1 GitHub 加速
@@ -63,67 +67,3 @@
 - commit message 格式：`{type}: {description}`
 - 类型：feat, fix, perf, refactor, test, docs, config, delete
 - 示例：`feat: 添加用户登录功能`
-
-## 第五章 Superpowers 插件
-
-### 5.1 核心原则
-- **Skill 优先**：任何任务开始前，**必须**检查是否有适用的 Skill，哪怕只有 1% 的可能性
-- **先调用后响应**：在回复用户（包括澄清问题）之前，先调用相关 Skill
-- **Skill 内容即指令**：Skill 加载后，其内容作为直接指令执行，不得跳过或简化
-
-### 5.2 调用规则
-
-#### 何时调用
-- 接收到用户消息时，检查是否有匹配的 Skill
-- 进入计划模式前，先检查是否有适用的流程类 Skill（如 `brainstorming`）
-- 实施任务时，检查是否有匹配的实现类 Skill（如 `frontend-design`）
-- 任何"可能有关"的 Skill → 调用查看，确认无关则跳过
-
-#### 调用优先级
-1. **流程类 Skill**（如 `brainstorming`、`systematic-debugging`）→ 决定如何**处理**任务
-2. **实现类 Skill**（如 `frontend-design`、`mcp-builder`）→ 指导具体**执行**
-
-#### 红旗思维（出现以下想法时必须停止并调用 Skill）
-
-| 红旗想法 | 实际情况 |
-|---------|---------|
-| "这只是个简单问题" | 问题也是任务，需要检查 Skill |
-| "我需要更多上下文" | Skill 检查在澄清问题之前 |
-| "让我先探索代码库" | Skill 告诉你**如何**探索 |
-| "这个不需要正式 Skill" | 如果 Skill 存在，就使用它 |
-| "我记得这个 Skill" | Skill 会更新，必须读取当前版本 |
-| "我先把这件事做了" | 做任何事之前先检查 Skill |
-
-### 5.3 Skill 类型
-
-| 类型 | 说明 | 示例 |
-|------|------|------|
-| 刚性（Rigid） | 必须严格遵循，不得偏离 | `test-driven-development`、`systematic-debugging` |
-| 灵活（Flexible） | 根据上下文调整原则 | `frontend-design`、`brainstorming` |
-
-### 5.4 常用 Skill 清单
-
-| Skill 名称 | 触发场景 |
-|------------|---------|
-| `brainstorming` | 任何创建功能、构建组件、添加功能或修改行为的工作前**必须使用** |
-| `systematic-debugging` | 遇到 bug、测试失败或异常行为时，在提出修复之前使用 |
-| `test-driven-development` | 实现任何功能或修复 bug 时，在编写实现代码之前使用 |
-| `frontend-design` | 构建前端界面、组件、页面时使用 |
-| `verification-before-completion` | 声称工作完成之前**必须使用** |
-| `writing-plans` | 有规格说明或需求的多步骤任务，在接触代码之前使用 |
-| `skill-creator` | 创建或更新 Skill 时使用 |
-| `skill-vetter` | 安装任何第三方 Skill 之前**必须使用** |
-| `mcp-builder` | 构建 MCP 服务器时使用 |
-| `caveman` | 超压缩通信模式，减少 ~75% token 用量，当用户要求简短输出时使用 |
-| `grill-me` | 对计划或设计进行压力测试，反复追问直到达成共识 |
-| `handoff` | 将当前对话压缩为交接文档，供其他代理接续工作 |
-| `write-a-skill` | 创建新的 agent skill，包含结构、渐进披露和捆绑资源 |
-
-### 5.5 工具映射（OpenCode 环境）
-
-| Skill 中引用的工具 | OpenCode 等价工具 |
-|-------------------|-------------------|
-| `TodoWrite` | `todowrite` |
-| `Task` (with subagents) | `task`（子代理系统） |
-| `Skill` | `skill`（OpenCode 原生） |
-| `Read`、`Write`、`Edit`、`Bash` | OpenCode 原生同名工具 |

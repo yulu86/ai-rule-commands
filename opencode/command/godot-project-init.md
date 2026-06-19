@@ -20,8 +20,9 @@ agent: build
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/addons ./addons
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/test ./test
 
-   # .gitignore 与 *.json 强制覆盖（确保脚手架配置始终最新）
+   # .gitignore、.gitattributes 与 *.json 强制覆盖（确保脚手架配置始终最新）
    cp -f ~/workspace/code/07_games/GodotScaffolding/.gitignore ./.gitignore
+   cp -f ~/workspace/code/07_games/GodotScaffolding/.gitattributes ./.gitattributes
    cp -f ~/workspace/code/07_games/GodotScaffolding/opencode.json ./opencode.json
    copy_file ~/workspace/code/07_games/GodotScaffolding/AGENTS.md ./AGENTS.md
    copy_file ~/workspace/code/07_games/GodotScaffolding/README.md ./README.md
@@ -35,7 +36,7 @@ agent: build
    copy_file ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
 
    # 替换 {env:VAR} 占位符为对应环境变量的值（环境变量未设置则保留原占位符）
-   perl -i -pe 's/\{env:(\w+)\}/defined $ENV{$1} ? $ENV{$1} : "{env:$1}"/ge' ./.zcode/config.json
+   perl -i -pe 's/\{env:(\w+)\}/defined $ENV{$1} ? $ENV{$1} : "{env:$1}"/ge' ./opencode.json ./.zcode/config.json
    ```
 
    2. 拷贝完成后，提醒用户：
@@ -55,8 +56,9 @@ agent: build
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\addons" "addons"
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\test" "test"
 
-   # .gitignore 与 *.json 强制覆盖（确保脚手架配置始终最新）
+   # .gitignore、.gitattributes 与 *.json 强制覆盖（确保脚手架配置始终最新）
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore" -Force
+   copy "~\workspace\code\07_games\GodotScaffolding\.gitattributes" ".gitattributes" -Force
    copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json" -Force
    Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\AGENTS.md" "AGENTS.md"
    Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
@@ -76,9 +78,11 @@ agent: build
 
    # 替换 {env:VAR} 占位符为对应环境变量的值（环境变量未设置则保留原占位符）
    $replaceEnv = { param($m); $v = [Environment]::GetEnvironmentVariable($m.Groups[1].Value); if ($v) { $v } else { $m.Groups[0].Value } }
-   $__cfg = Get-Content ".zcode/config.json" -Raw
-   $__cfg = [regex]::Replace($__cfg, '\{env:(\w+)\}', $replaceEnv)
-   Set-Content ".zcode/config.json" $__cfg -NoNewline
+   foreach ($__f in @("opencode.json", ".zcode/config.json")) {
+     $__cfg = Get-Content $__f -Raw
+     $__cfg = [regex]::Replace($__cfg, '\{env:(\w+)\}', $replaceEnv)
+     Set-Content $__f $__cfg -NoNewline
+   }
    ```
 
    3. 拷贝完成后，提醒用户：
@@ -86,8 +90,8 @@ agent: build
 
 注意：
 - 拷贝前会判断目标是否已存在，已存在则跳过，避免覆盖用户已有文件
-- `.gitignore` 与 `*.json`（`opencode.json`、`.zcode/config.json`）为脚手架配置，**强制覆盖**，确保始终为最新版本
-- `.zcode/config.json` 中的 `{env:VAR}` 占位符会读取同名环境变量替换；环境变量未设置时保留占位符
+- `.gitignore`、`.gitattributes` 与 `*.json`（`opencode.json`、`.zcode/config.json`）为脚手架配置，**强制覆盖**，确保始终为最新版本
+- `opencode.json` 与 `.zcode/config.json` 中的 `{env:VAR}` 占位符会读取同名环境变量替换；环境变量未设置时保留占位符
 - xcopy 的 `/E` 参数表示复制子目录，包括空的子目录
 - `/I` 参数表示如果目标不存在，则创建目录
 - `/H` 参数表示复制隐藏文件和系统文件

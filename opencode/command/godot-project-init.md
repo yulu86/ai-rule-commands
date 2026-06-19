@@ -19,9 +19,12 @@ agent: build
    cp ~/workspace/code/07_games/GodotScaffolding/opencode.json ./
    cp ~/workspace/code/07_games/GodotScaffolding/AGETNS.md ./
    cp ~/workspace/code/07_games/GodotScaffolding/README.md ./
-    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
-    cp ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
-    ```
+
+   cp -r ~/workspace/code/07_games/GodotScaffolding/.zcode ./
+   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
+   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./zcode/config.json
+   cp ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
+   ```
 
     3. 拷贝完成后，提醒用户：
     > ⚠️ 已自动从 `.env.example` 生成 `.env` 文件，请根据项目需要填写其中的配置项。
@@ -38,9 +41,16 @@ agent: build
    copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
    copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
    copy "~\workspace\code\07_games\GodotScaffolding\AGETNS.md" "AGETNS.md"
-    copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
+   copy "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
+
+   xcopy "~\workspace\code\07_games\GodotScaffolding\.zcode" ".zcode" /E /I /H /Y
+
      $projectName = Split-Path -Leaf (Get-Location)
      (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
+
+     $projectName = Split-Path -Leaf (Get-Location)
+     (Get-Content ".zcode/config.json" -Raw) -replace 'brave-legend', $projectName | Set-Content ".zcode/config.json" -NoNewline
+
      copy "~\workspace\code\07_games\GodotScaffolding\.env.example" ".env"
      ```
 

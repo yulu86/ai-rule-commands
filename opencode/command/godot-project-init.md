@@ -19,13 +19,17 @@ agent: build
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/docs ./docs
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/addons ./addons
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/test ./test
-   copy_file ~/workspace/code/07_games/GodotScaffolding/.gitignore ./.gitignore
-   copy_file ~/workspace/code/07_games/GodotScaffolding/opencode.json ./opencode.json
-   copy_file ~/workspace/code/07_games/GodotScaffolding/AGETNS.md ./AGETNS.md
+
+   # .gitignore 与 *.json 强制覆盖（确保脚手架配置始终最新）
+   cp -f ~/workspace/code/07_games/GodotScaffolding/.gitignore ./.gitignore
+   cp -f ~/workspace/code/07_games/GodotScaffolding/opencode.json ./opencode.json
+   copy_file ~/workspace/code/07_games/GodotScaffolding/AGENTS.md ./AGENTS.md
    copy_file ~/workspace/code/07_games/GodotScaffolding/README.md ./README.md
 
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/.zcode ./.zcode
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/.opencode/skills ./.zcode/skills
+   # .zcode 目录可能已存在，单独强制覆盖 config.json
+   cp -f ~/workspace/code/07_games/GodotScaffolding/.zcode/config.json ./.zcode/config.json
    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
    sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./zcode/config.json
    copy_file ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
@@ -50,13 +54,17 @@ agent: build
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\docs" "docs"
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\addons" "addons"
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\test" "test"
-   Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore"
-   Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json"
-   Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\AGETNS.md" "AGETNS.md"
+
+   # .gitignore 与 *.json 强制覆盖（确保脚手架配置始终最新）
+   copy "~\workspace\code\07_games\GodotScaffolding\.gitignore" ".gitignore" -Force
+   copy "~\workspace\code\07_games\GodotScaffolding\opencode.json" "opencode.json" -Force
+   Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\AGENTS.md" "AGENTS.md"
    Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\README.md" "README.md"
 
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\.zcode" ".zcode"
    Copy-DirIfNotExists  "~\workspace\code\07_games\GodotScaffolding\.opencode\skills" ".zcode\skills"
+   # .zcode 目录可能已存在，单独强制覆盖 config.json
+   copy "~\workspace\code\07_games\GodotScaffolding\.zcode\config.json" ".zcode\config.json" -Force
 
    $projectName = Split-Path -Leaf (Get-Location)
    (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
@@ -78,6 +86,7 @@ agent: build
 
 注意：
 - 拷贝前会判断目标是否已存在，已存在则跳过，避免覆盖用户已有文件
+- `.gitignore` 与 `*.json`（`opencode.json`、`.zcode/config.json`）为脚手架配置，**强制覆盖**，确保始终为最新版本
 - `.zcode/config.json` 中的 `{env:VAR}` 占位符会读取同名环境变量替换；环境变量未设置时保留占位符
 - xcopy 的 `/E` 参数表示复制子目录，包括空的子目录
 - `/I` 参数表示如果目标不存在，则创建目录

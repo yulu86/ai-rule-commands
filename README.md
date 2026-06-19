@@ -28,6 +28,9 @@ ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/tui.json" "/
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/agents" "/Users/xuyulu/.config/opencode/agents"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/command" "/Users/xuyulu/.config/opencode/command"
 ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/skills" "/Users/xuyulu/.config/opencode/skills"
+
+
+ln -s "/Users/xuyulu/workspace/code/01_AI/ai-rule-commands/opencode/AGENTS.md" "/Users/xuyulu/.zcode/AGENTS.md"
 ```
 
 ### linux

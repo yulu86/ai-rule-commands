@@ -17,6 +17,12 @@ mklink "C:\Users\Yulu Xu\.config\opencode\tui.json" "D:\workspace\code\01_AI\ai-
 mklink /d "C:\Users\Yulu Xu\.config\opencode\agents" "D:\workspace\code\01_AI\ai-rule-commands\opencode\agents"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\command" "D:\workspace\code\01_AI\ai-rule-commands\opencode\command"
 mklink /d "C:\Users\Yulu Xu\.config\opencode\skills" "D:\workspace\code\01_AI\ai-rule-commands\opencode\skills"
+
+
+mklink "C:\Users\Yulu Xu\.zcode\AGENTS.md" "D:\workspace\code\01_AI\ai-rule-commands\opencode\AGENTS.md"
+mklink /d "C:\Users\Yulu Xu\.zcode\commands" "D:\workspace\code\01_AI\ai-rule-commands\opencode\command"
+mklink "C:\Users\Yulu Xu\.zcode\cli\config.json" "D:\workspace\code\01_AI\ai-rule-commands\zcode\cli\config.json"
+mklink /d "C:\Users\Yulu Xu\.zcode\skills" "D:\workspace\code\01_AI\ai-rule-commands\opencode\skills"
 ```
 
 ### mac

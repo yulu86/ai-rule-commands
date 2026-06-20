@@ -77,7 +77,8 @@ agent: build
    Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\.env.example" ".env"
 
    # 替换 {env:VAR} 占位符为对应环境变量的值（环境变量未设置则保留原占位符）
-   $replaceEnv = { param($m); $v = [Environment]::GetEnvironmentVariable($m.Groups[1].Value); if ($v) { $v } else { $m.Groups[0].Value } }
+   # 注意：Windows 环境变量中的路径分隔符 \ 需替换为 /，避免写入 JSON 时被当作转义字符
+   $replaceEnv = { param($m); $v = [Environment]::GetEnvironmentVariable($m.Groups[1].Value); if ($v) { $v.Replace('\', '/') } else { $m.Groups[0].Value } }
    foreach ($__f in @("opencode.json", ".zcode/config.json")) {
      $__cfg = Get-Content $__f -Raw
      $__cfg = [regex]::Replace($__cfg, '\{env:(\w+)\}', $replaceEnv)

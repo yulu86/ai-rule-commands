@@ -63,6 +63,13 @@
                     "Z_AI_API_KEY": "{env:ZHIPU_API_KEY}",
                     "Z_AI_MODE": "ZHIPU"
                 }
+            },
+            "web-search-prime": {
+                "type": "sse",
+                "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+                "headers": {
+                    "Authorization": "Bearer {env:ZHIPU_API_KEY}"
+                }
             }
         }
     }

@@ -116,10 +116,17 @@
                 "Z_AI_API_KEY": "{env:ZHIPU_API_KEY}",
                 "Z_AI_MODE": "ZHIPU"
             }
+        },
+        "web-search-prime": {
+            "type": "remote",
+            "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+            "headers": {
+                "Authorization": "Bearer {env:ZHIPU_API_KEY}"
+            }
         }
     },
     "plugin": [
         "opencode-pencil-sync",
-        "superpowers@git+https://github.com/obra/superpowers.git"        
+        "superpowers@git+https://github.com/obra/superpowers.git"
     ]
 }

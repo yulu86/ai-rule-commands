@@ -31,8 +31,8 @@ agent: build
    copy_dir  ~/workspace/code/07_games/GodotScaffolding/.opencode/skills ./.zcode/skills
    # .zcode 目录可能已存在，单独强制覆盖 config.json
    cp -f ~/workspace/code/07_games/GodotScaffolding/.zcode/config.json ./.zcode/config.json
-   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./opencode.json
-   sed -i '' "s/brave-legend/$(basename $(pwd))/g" ./zcode/config.json
+   sed -i '' "s/GodotScaffolding/$(basename $(pwd))/g" ./opencode.json
+   sed -i '' "s/GodotScaffolding/$(basename $(pwd))/g" ./zcode/config.json
    copy_file ~/workspace/code/07_games/GodotScaffolding/.env.example ./.env
 
    # 替换 {env:VAR} 占位符为对应环境变量的值（环境变量未设置则保留原占位符）
@@ -69,10 +69,10 @@ agent: build
    copy "~\workspace\code\07_games\GodotScaffolding\.zcode\config.json" ".zcode\config.json" -Force
 
    $projectName = Split-Path -Leaf (Get-Location)
-   (Get-Content "opencode.json" -Raw) -replace 'brave-legend', $projectName | Set-Content "opencode.json" -NoNewline
+   (Get-Content "opencode.json" -Raw) -replace 'GodotScaffolding', $projectName | Set-Content "opencode.json" -NoNewline
 
    $projectName = Split-Path -Leaf (Get-Location)
-   (Get-Content ".zcode/config.json" -Raw) -replace 'brave-legend', $projectName | Set-Content ".zcode/config.json" -NoNewline
+   (Get-Content ".zcode/config.json" -Raw) -replace 'GodotScaffolding', $projectName | Set-Content ".zcode/config.json" -NoNewline
 
    Copy-FileIfNotExists "~\workspace\code\07_games\GodotScaffolding\.env.example" ".env"
 
